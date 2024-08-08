@@ -1,6 +1,7 @@
 streamlit
 streamlit-pills
 streamlit-extras
+streamlit-on-Hover-tabs
 pandas
 yfinance
 numpy

@@ -94,18 +94,29 @@ Forecasting of the stock market data with different models.
 button_css = "css/button.css"
 button_css_content = load_css(button_css)
 
-# st.markdown(f"<style>{css_content}</style>", unsafe_allow_html=True)
-
-
-# LINK TO THE CSS FILE
-# with open("css/styles.css")as f:
-#     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html = True)
-
-
 models = ['LSTM','2','3']
 # Load the tickers
 tickers_df = get_tickers()
 tickers = tickers_df.iloc[:,0]
+
+
+# --------------
+with st.sidebar:
+    tabs = on_hover_tabs(tabName=['Dashboard', 'Money', 'Economy'], 
+                         iconName=['dashboard', 'money', 'economy'], default_choice=0)
+
+if tabs =='Dashboard':
+    st.title("Navigation Bar")
+    st.write('Name of option is {}'.format(tabs))
+
+elif tabs == 'Money':
+    st.title("Paper")
+    st.write('Name of option is {}'.format(tabs))
+
+elif tabs == 'Economy':
+    st.title("Tom")
+    st.write('Name of option is {}'.format(tabs))
+#----------------
 
 col1, col2 = st.columns([1,4])
 
@@ -127,19 +138,6 @@ with col2:
 selected_model = pills('Select Model', models, ["🟠","🟡","🟢"])
 # ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"]
 ''
-
-
-# with stylable_container(
-#     key="button",
-#     css_styles="""
-#             button {
-#                 background-color: green;
-#                 color: white;
-#                 border-radius: 20px;
-
-#             }
-#             """,
-# ):
 
 with stylable_container(
     key="button",
