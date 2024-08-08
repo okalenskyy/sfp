@@ -92,7 +92,7 @@ Forecasting of the stock market data with different models.
 ''
 
 button_css = "css/button.css"
-button_css_content = load_css(css_file)
+button_css_content = load_css(button_css)
 
 # st.markdown(f"<style>{css_content}</style>", unsafe_allow_html=True)
 
