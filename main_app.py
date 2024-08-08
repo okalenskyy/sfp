@@ -91,10 +91,10 @@ Forecasting of the stock market data with different models.
 ''
 ''
 
-css_file = "css/styles.css"
-css_content = load_css(css_file)
+button_css = "css/button.css"
+button_css_content = load_css(css_file)
 
-st.markdown(f"<style>{css_content}</style>", unsafe_allow_html=True)
+# st.markdown(f"<style>{css_content}</style>", unsafe_allow_html=True)
 
 
 # LINK TO THE CSS FILE
@@ -129,16 +129,21 @@ selected_model = pills('Select Model', models, ["🟠","🟡","🟢"])
 ''
 
 
+# with stylable_container(
+#     key="button",
+#     css_styles="""
+#             button {
+#                 background-color: green;
+#                 color: white;
+#                 border-radius: 20px;
+
+#             }
+#             """,
+# ):
+
 with stylable_container(
     key="button",
-    css_styles="""
-            button {
-                background-color: green;
-                color: white;
-                border-radius: 20px;
-
-            }
-            """,
+    css_styles=button_css_content,
 ):
     if st.button('Run prediction'):
         st.write('done')
