@@ -91,10 +91,16 @@ Forecasting of the stock market data with different models.
 ''
 ''
 
-css_file = "css/styles.css"
-css_content = load_css(css_file)
+# css_file = "css/styles.css"
+# css_content = load_css(css_file)
 
-st.markdown(f"<style>{css_content}</style>", unsafe_allow_html=True)
+# st.markdown(f"<style>{css_content}</style>", unsafe_allow_html=True)
+
+
+# LINK TO THE CSS FILE
+with open(‘css/styles.css’)as f:
+    st.markdown(f”<style>{f.read()}</style>”, unsafe_allow_html = True)
+
 
 models = ['LSTM','2','3']
 # Load the tickers
@@ -134,8 +140,7 @@ selected_model = pills('Select Model', models, ["🟠","🟡","🟢"])
 # ):
 if st.button('Run prediction'):
     st.write('done')
-if st.markdown('<a href="#" class="button">Run prediction</a>', unsafe_allow_html=True):
-    st.write('done')
+
 
 ''
 ''
