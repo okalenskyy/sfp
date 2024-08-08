@@ -138,8 +138,12 @@ selected_model = pills('Select Model', models, ["🟠","🟡","🟢"])
 #             }
 #             """,
 # ):
-if st.button('Run prediction'):
-    st.write('done')
+# if st.button('Run prediction'):
+#     st.write('done')
+
+
+if st.markdown('<a href="#" class="red-button" onclick="alert(\'Button clicked!\')">Click Me!</a>', unsafe_allow_html=True):
+    st.write("Custom button is displayed.")
 
 
 ''
