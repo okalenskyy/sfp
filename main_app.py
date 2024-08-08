@@ -131,7 +131,14 @@ selected_model = pills('Select Model', models, ["🟠","🟡","🟢"])
 
 with stylable_container(
     key="button",
-    css_styles=css_content,
+    css_styles="""
+            button {
+                background-color: green;
+                color: white;
+                border-radius: 20px;
+
+            }
+            """,
 ):
     if st.button('Run prediction'):
         st.write('done')
@@ -140,14 +147,7 @@ with stylable_container(
 ''
 ''
 
-# """
-#             button {
-#                 background-color: green;
-#                 color: white;
-#                 border-radius: 20px;
 
-#             }
-#             """
 
 
 
