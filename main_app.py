@@ -84,10 +84,8 @@ Forecasting of the stock market data with different models.
 ''
 ''
 
-
 selected = pills("Label", ["Option 1", "Option 2", "Option 3"], ["🍀", "🎈", "🌈"])
 st.write(selected)
-
 
 models = ['LSTM','2','3']
 # Load the tickers
@@ -111,10 +109,14 @@ with col2:
     st.write(f'Sector: {tickers_df[tickers_df.Symbol == selected_ticker].Sector.values[0]}')
     st.write(f'Industry: {tickers_df[tickers_df.Symbol == selected_ticker].Industry.values[0]}')
     
-selected_model = st.multiselect(
-    'Select Model',
-    models,
-    ['LSTM'])
+# selected_model = st.multiselect(
+#     'Select Model',
+#     models,
+#     ['LSTM'])
+
+selected_model = pills('Select Model', models, ["🍀", "🎈", "🌈"])
+st.write(selected)
+
 ''
 st.button(f'Predict with {selected_model[0]}')
 ''
