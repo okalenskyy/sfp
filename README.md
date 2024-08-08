@@ -1,6 +1,6 @@
 # :chart_with_upwards_trend: SFP - Stock Forecasting Playground
 
-A  Streamlit app showing the application of different models for time series forecastin.
+Forecasting stock market data using different models.
 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://sfplay.streamlit.app/)
 
