@@ -130,10 +130,10 @@ st.header(f'{selected_ticker}: hystorical data vs forecast', divider='red')
 
 ''
 
-st.line_chart(
-        filtered_gdp_df,
-        x='Year',
-        y='GDP',
-        color='Country Code',
-    )
+# st.line_chart(
+#         filtered_gdp_df,
+#         x='Year',
+#         y='GDP',
+#         color='Country Code',
+#     )
 
