@@ -4,6 +4,6 @@ yfinance
 numpy
 # sklearn
 # scikit-learn
-# keras
+keras
 # keras.models
 # keras.layers
