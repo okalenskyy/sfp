@@ -132,8 +132,8 @@ selected_model = pills('Select Model', models, ["🟠","🟡","🟢"])
 #             }
 #             """,
 # ):
-    if st.button('Run prediction'):
-        st.write('done')
+if st.button('Run prediction'):
+    st.write('done')
 
 ''
 st.header(f'{selected_ticker}: hystorical data vs forecast', divider='red')
