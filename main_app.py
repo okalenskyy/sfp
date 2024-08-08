@@ -98,7 +98,7 @@ Forecasting of the stock market data with different models.
 
 
 # LINK TO THE CSS FILE
-with open(‘css/styles.css’)as f:
+with open("css/styles.css")as f:
     st.markdown(f”<style>{f.read()}</style>”, unsafe_allow_html = True)
 
 
