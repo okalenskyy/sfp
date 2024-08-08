@@ -5,5 +5,5 @@ numpy
 # sklearn
 # scikit-learn
 keras
-# keras.models
-# keras.layers
+keras.models
+keras.layers
