@@ -108,16 +108,8 @@ with col2:
     st.write(f'Sector: {tickers_df[tickers_df.Symbol == selected_ticker].Sector.values[0]}')
     st.write(f'Industry: {tickers_df[tickers_df.Symbol == selected_ticker].Industry.values[0]}')
     
-# selected_model = st.multiselect(
-#     'Select Model',
-#     models,
-#     ['LSTM'])
-
 selected_model = pills('Select Model', models, ["🍀", "🎈", "🌈"])
-st.write(selected_model)
 
-''
-# st.button(f'Predict with {selected_model[0]}')
 ''
 with stylable_container(
     key="green_button",
