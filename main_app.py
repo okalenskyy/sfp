@@ -108,7 +108,7 @@ with col2:
     st.write(f'Sector: {tickers_df[tickers_df.Symbol == selected_ticker].Sector.values[0]}')
     st.write(f'Industry: {tickers_df[tickers_df.Symbol == selected_ticker].Industry.values[0]}')
     
-selected_model = pills('Select Model', models)
+selected_model = pills('Select Model', models, ["🟠","🟡",","🟢","🟣","🟤","🔵","🔴","⚫","⚪"])
 
 ''
 with stylable_container(
