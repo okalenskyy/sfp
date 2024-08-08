@@ -84,9 +84,6 @@ Forecasting of the stock market data with different models.
 ''
 ''
 
-selected = pills("Label", ["Option 1", "Option 2", "Option 3"], ["🍀", "🎈", "🌈"])
-st.write(selected)
-
 models = ['LSTM','2','3']
 # Load the tickers
 tickers_df = get_tickers()
