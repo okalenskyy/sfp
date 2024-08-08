@@ -134,10 +134,10 @@ selected_model = pills('Select Model', models, ["🟠","🟡","🟢"])
 # ):
 if st.button('Run prediction'):
     st.write('done')
+if st.markdown('<a href="#" class="button">Run prediction</a>', unsafe_allow_html=True):
+    st.write('done')
 
 ''
-st.header(f'{selected_ticker}: hystorical data vs forecast', divider='red')
-
 ''
 
 # st.line_chart(
