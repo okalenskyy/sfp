@@ -2,7 +2,7 @@ streamlit
 pandas
 yfinance
 numpy
-sklearn
+#sklearn
 scikit-learn
 keras
 #keras.models
