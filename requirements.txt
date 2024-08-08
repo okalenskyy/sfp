@@ -2,8 +2,8 @@ streamlit
 pandas
 yfinance
 numpy
-# sklearn
-# scikit-learn
+sklearn
+scikit-learn
 keras
 #keras.models
 #keras.layers
