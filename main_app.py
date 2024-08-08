@@ -113,7 +113,7 @@ with col2:
 #     ['LSTM'])
 
 selected_model = pills('Select Model', models, ["🍀", "🎈", "🌈"])
-st.write(selected)
+st.write(selected_model)
 
 ''
 st.button(f'Predict with {selected_model[0]}')
