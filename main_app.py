@@ -101,7 +101,6 @@ Forecasting of the stock market data with different models.
 with open("css/styles.css")as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html = True)
 
-
 models = ['LSTM','2','3']
 # Load the tickers
 tickers_df = get_tickers()
@@ -127,12 +126,13 @@ with col2:
 selected_model = pills('Select Model', models, ["🟠","🟡","🟢"])
 # ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"]
 ''
-with stylable_container(
-    key="green-button",
-    css_styles="green-button",
-):
-    if st.button('Run prediction'):
-        st.write('done')
+# with stylable_container(
+#     key="green-button",
+#     css_styles="green-button",
+# ):
+# 
+if st.button('Run prediction'):
+    st.write('done')
 
 
 ''
