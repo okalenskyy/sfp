@@ -3,8 +3,8 @@ import pandas as pd
 from pathlib import Path
 import yfinance as yf
 
-from sfp.lib.models import rnn_model, lstm_horizon_model
-from sfp.Classes.YahooTickerClass import YahooTicker
+from lib.models import rnn_model, lstm_horizon_model
+from Classes.YahooTickerClass import YahooTicker
 
 
 
