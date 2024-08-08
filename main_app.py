@@ -145,7 +145,7 @@ with stylable_container(
     key="button",
     css_styles=button_css_content,
 ):
-    if st.button('Run prediction'):
+    if st.button('Update prediction'):
         st.write('done')
 
 
