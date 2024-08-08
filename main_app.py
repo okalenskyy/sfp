@@ -8,6 +8,7 @@ from Classes.YahooTickerClass import YahooTicker
 from streamlit_pills import pills
 
 
+
 # Set the title and favicon that appear in the Browser's tab bar.
 st.set_page_config(
     page_title='Stocks Analysis',
@@ -116,6 +117,19 @@ st.write(selected)
 
 ''
 st.button(f'Predict with {selected_model[0]}')
+''
+with stylable_container(
+    key="green_button",
+    css_styles="""
+            button {
+                background-color: green;
+                color: white;
+                border-radius: 20px;
+            }
+            """,
+):
+        st.button("Green button")
+
 ''
 st.header(f'{selected_ticker}: hystorical data vs forecast', divider='red')
 
