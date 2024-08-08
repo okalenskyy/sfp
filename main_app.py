@@ -98,8 +98,8 @@ button_css_content = load_css(button_css)
 
 
 # LINK TO THE CSS FILE
-with open("css/styles.css")as f:
-    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html = True)
+# with open("css/styles.css")as f:
+#     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html = True)
 
 
 models = ['LSTM','2','3']
