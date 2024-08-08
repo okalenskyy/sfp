@@ -122,7 +122,7 @@ with stylable_container(
             }
             """,
 ):
-        st.button('Run')
+        st.button('Run prediction')
 
 ''
 st.header(f'{selected_ticker}: hystorical data vs forecast', divider='red')
