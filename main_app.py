@@ -11,15 +11,16 @@ from streamlit_extras.stylable_container import stylable_container
 
 from st_on_hover_tabs import on_hover_tabs
 
-st.set_page_config(layout="wide")
+# st.set_page_config(layout="wide")
 
 # Importing stylesheet
 # st.markdown('<style>' + open("css/styles.css").read() + '</style>', unsafe_allow_html=True)
 
 # Set the title and favicon that appear in the Browser's tab bar.
 st.set_page_config(
-    page_title='Stocks Analysis',
+    page_title='Stocks Forecast Playground',
     page_icon=':chart:', # This is an emoji shortcode. Could be a URL too.
+    layout='wide'
 )
 
 # -----------------------------------------------------------------------------
