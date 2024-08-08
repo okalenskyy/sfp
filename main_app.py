@@ -121,17 +121,17 @@ with col2:
 selected_model = pills('Select Model', models, ["🟠","🟡","🟢"])
 # ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"]
 ''
-with stylable_container(
-    key="green_button",
-    css_styles="""
-            button {
-                background-color: green;
-                color: white;
-                border-radius: 20px;
+# with stylable_container(
+#     key="green_button",
+#     css_styles="""
+#             button {
+#                 background-color: green;
+#                 color: white;
+#                 border-radius: 20px;
 
-            }
-            """,
-):
+#             }
+#             """,
+# ):
     if st.button('Run prediction'):
         st.write('done')
 
