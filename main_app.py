@@ -117,7 +117,7 @@ selected_model = pills('Select Model', models, ["🍀", "🎈", "🌈"])
 st.write(selected_model)
 
 ''
-st.button(f'Predict with {selected_model[0]}')
+# st.button(f'Predict with {selected_model[0]}')
 ''
 with stylable_container(
     key="green_button",
@@ -129,7 +129,7 @@ with stylable_container(
             }
             """,
 ):
-        st.button("Green button")
+        st.button(f'Predict with {selected_model[0]}')
 
 ''
 st.header(f'{selected_ticker}: hystorical data vs forecast', divider='red')
