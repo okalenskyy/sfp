@@ -135,10 +135,6 @@ with stylable_container(
         st.write('done')
 
 
-if st.markdown('<a href="#" class="green-button" onclick="alert(\'Button clicked!\')">Click Me!</a>', unsafe_allow_html=True):
-    st.write("Custom button is displayed.")
-
-
 ''
 ''
 
