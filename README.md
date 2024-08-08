@@ -2,7 +2,7 @@
 
 A  Streamlit app showing the application of different models for time series forecastin.
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://sfp.streamlit.app/)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://sfplay.streamlit.app/)
 
 
 ### How to run it on your own machine
