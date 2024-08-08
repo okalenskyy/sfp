@@ -127,27 +127,32 @@ with col2:
 selected_model = pills('Select Model', models, ["🟠","🟡","🟢"])
 # ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"]
 ''
-# with stylable_container(
-#     key="green_button",
-#     css_styles="""
+with stylable_container(
+    key="green-button",
+    css_styles="green-button",
+):
+if st.button('Run prediction'):
+    st.write('done')
+
+
+if st.markdown('<a href="#" class="green-button" onclick="alert(\'Button clicked!\')">Click Me!</a>', unsafe_allow_html=True):
+    st.write("Custom button is displayed.")
+
+
+''
+''
+
+# """
 #             button {
 #                 background-color: green;
 #                 color: white;
 #                 border-radius: 20px;
 
 #             }
-#             """,
-# ):
-# if st.button('Run prediction'):
-#     st.write('done')
+#             """
 
 
-if st.markdown('<a href="#" class="red-button" onclick="alert(\'Button clicked!\')">Click Me!</a>', unsafe_allow_html=True):
-    st.write("Custom button is displayed.")
 
-
-''
-''
 
 # st.line_chart(
 #         filtered_gdp_df,
