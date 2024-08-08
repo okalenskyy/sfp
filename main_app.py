@@ -5,7 +5,7 @@ import yfinance as yf
 
 from lib.models import rnn_model, lstm_horizon_model
 from Classes.YahooTickerClass import YahooTicker
-
+from streamlit_pills import pills
 
 
 # Set the title and favicon that appear in the Browser's tab bar.
@@ -83,6 +83,11 @@ Forecasting of the stock market data with different models.
 # Add some spacing
 ''
 ''
+
+
+selected = pills("Label", ["Option 1", "Option 2", "Option 3"], ["🍀", "🎈", "🌈"])
+st.write(selected)
+
 
 models = ['LSTM','2','3']
 # Load the tickers
