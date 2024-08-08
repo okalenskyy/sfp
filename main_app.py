@@ -6,6 +6,7 @@ import yfinance as yf
 from lib.models import rnn_model, lstm_horizon_model
 from Classes.YahooTickerClass import YahooTicker
 from streamlit_pills import pills
+from streamlit_extras.stylable_container import stylable_container
 
 
 
