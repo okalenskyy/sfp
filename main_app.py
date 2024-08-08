@@ -21,6 +21,12 @@ st.set_page_config(
 # Declare some useful functions.
 
 @st.cache_data
+def load_css(file_name):
+    with open(file_name) as f:
+        css = f.read()
+    return css
+
+@st.cache_data
 def fetch_data(ticker, start_date, end_date):
     # Create an instance of the class
     AaplTicker = YahooTicker(ticker, start_date, end_date)
@@ -86,6 +92,11 @@ Forecasting of the stock market data with different models.
 # Add some spacing
 ''
 ''
+
+css_file = "css/styles.css"
+css_content = load_css(css_file)
+
+st.markdown(f"<style>{css_content}</style>", unsafe_allow_html=True)
 
 models = ['LSTM','2','3']
 # Load the tickers
