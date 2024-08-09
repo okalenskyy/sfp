@@ -97,11 +97,13 @@ def construct_sidebar():
         # Load the tickers
         tickers_df = get_tickers()
         tickers = tickers_df.iloc[:,0]
+        
+        selected_ticker = st.selectbox('Ticker:', tickers)
 
         selected_model = pills('Select Model', models, ["🟠","🟡","🟢"])
         # # ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"]
 # -/test
-        selected_ticker = st.selectbox('Ticker:', tickers)
+
         # ok=0
 
         # for i in range(int(st.number_input('Num:'))): ok=ok+1
