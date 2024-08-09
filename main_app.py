@@ -108,18 +108,19 @@ def construct_sidebar():
         #     st.write(my_slider_val)
         st.write(f'{selected_ticker}')
 
-
-
+def test():
+    return('#  :chart: Stocks Forecasting')
 # -----------------------------------------------------------------------------
 # Draw the actual page
 
 # Set the title that appears at the top of the page.
 
-'''
-#  :chart: Stocks Forecasting
+# '''
+# #  :chart: Stocks Forecasting
 
-Forecasting of the stock market data with different models.
-'''
+# Forecasting of the stock market data with different models.
+# '''
+test()
 
 # Add some spacing
 ''
