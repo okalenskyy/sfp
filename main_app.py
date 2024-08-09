@@ -32,7 +32,6 @@ def load_css(file_name):
         css = f.read()
     return css
 
-@st.cache_data
 def fetch_data(ticker, start_date, end_date):
     # Create an instance of the class
     AaplTicker = YahooTicker(ticker, start_date, end_date)
@@ -99,6 +98,15 @@ def construct_sidebar():
         #     my_slider_val = st.slider('Quinn Mallory', 1, 88)
         #     st.write(my_slider_val)
         st.write(f'{selected_ticker}')
+# -test
+
+        models = ['LSTM','2','3']
+        # Load the tickers
+        tickers_df = get_tickers()
+        tickers = tickers_df.iloc[:,0]
+
+# -/test
+
 
 # -----------------------------------------------------------------------------
 # Draw the actual page
@@ -155,33 +163,33 @@ construct_sidebar()
 
 #----------------
 
-col1, col2 = st.columns([1,4])
+# col1, col2 = st.columns([1,4])
 
-with col1:
-    # Select box to choose one item from the list
-    # selected_ticker = st.selectbox('Ticker:', tickers)
-    begin_date = st.date_input('Begin Date')
-    end_date = st.date_input('End Date')
+# with col1:
+#     # Select box to choose one item from the list
+#     # selected_ticker = st.selectbox('Ticker:', tickers)
+#     begin_date = st.date_input('Begin Date')
+#     end_date = st.date_input('End Date')
 
-with col2:
-    ''
-    st.subheader(f'{tickers_df[tickers_df.Symbol == selected_ticker].Name.values[0]}')
-    ''
-    st.write(f'{tickers_df[tickers_df.Symbol == selected_ticker].Country.values[0]}')
-    st.write(f'IPO Year: {int(tickers_df[tickers_df.Symbol == selected_ticker].iloc[0,3])}')
-    st.write(f'Sector: {tickers_df[tickers_df.Symbol == selected_ticker].Sector.values[0]}')
-    st.write(f'Industry: {tickers_df[tickers_df.Symbol == selected_ticker].Industry.values[0]}')
+# with col2:
+#     ''
+#     st.subheader(f'{tickers_df[tickers_df.Symbol == selected_ticker].Name.values[0]}')
+#     ''
+#     st.write(f'{tickers_df[tickers_df.Symbol == selected_ticker].Country.values[0]}')
+#     st.write(f'IPO Year: {int(tickers_df[tickers_df.Symbol == selected_ticker].iloc[0,3])}')
+#     st.write(f'Sector: {tickers_df[tickers_df.Symbol == selected_ticker].Sector.values[0]}')
+#     st.write(f'Industry: {tickers_df[tickers_df.Symbol == selected_ticker].Industry.values[0]}')
     
-selected_model = pills('Select Model', models, ["🟠","🟡","🟢"])
-# ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"]
-''
+# selected_model = pills('Select Model', models, ["🟠","🟡","🟢"])
+# # ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"]
+# ''
 
-with stylable_container(
-    key="button",
-    css_styles=button_css_content,
-):
-    if st.button('Update prediction'):
-        st.write('done')
+# with stylable_container(
+#     key="button",
+#     css_styles=button_css_content,
+# ):
+#     if st.button('Update prediction'):
+#         st.write('done')
 
 
 ''
