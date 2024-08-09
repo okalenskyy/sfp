@@ -109,7 +109,7 @@ def construct_sidebar():
         # if st.sidebar.selectbox('I:',['f','j']) == 'f':
         my_slider_val = st.slider('Prediction days', 1, 7)
         #     st.write(my_slider_val)
-        st.write(f'{selected_ticker} - {selected_model}')
+        st.write(f'{selected_ticker} - {selected_model} - {my_slider_val}')
 
 # -----------------------------------------------------------------------------
 # Draw the actual page
