@@ -83,18 +83,7 @@ def predict():
                          'Original data':y_test['Open'].values},
                          index=y_test.index.values)
     y_pred_df.plot()
-def draw_page():
-    return('
-                '''
-                #  :chart: Stocks Forecasting
 
-                Forecasting of the stock market data with different models.
-                '''
-
-                # Add some spacing
-                ''
-                ''
-           ,)
 def construct_sidebar():
     with st.sidebar:
     # tabs = on_hover_tabs(tabName=['Dashboard', 'Money', 'Economy'], 
@@ -125,16 +114,16 @@ def construct_sidebar():
 # Draw the actual page
 
 # Set the title that appears at the top of the page.
-draw_page()
-# '''
-# #  :chart: Stocks Forecasting
 
-# Forecasting of the stock market data with different models.
-# '''
+'''
+#  :chart: Stocks Forecasting
 
-# # Add some spacing
-# ''
-# ''
+Forecasting of the stock market data with different models.
+'''
+
+# Add some spacing
+''
+''
 
 button_css = "css/button.css"
 button_css_content = load_css(button_css)
