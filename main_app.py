@@ -93,13 +93,12 @@ def construct_sidebar():
 
     # -test
 
-        models = ['LSTM','2','3']
         # Load the tickers
         tickers_df = get_tickers()
         tickers = tickers_df.iloc[:,0]
-        
         selected_ticker = st.selectbox('Ticker:', tickers)
 
+        models = ['LSTM','2','3']
         selected_model = pills('Select Model', models, ["🟠","🟡","🟢"])
         # # ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"]
 # -/test
@@ -110,7 +109,7 @@ def construct_sidebar():
         # if st.sidebar.selectbox('I:',['f','j']) == 'f':
         my_slider_val = st.slider('Prediction days', 1, 7)
         #     st.write(my_slider_val)
-        st.write(f'{selected_ticker}')
+        st.write(f'{selected_ticker} - {selected_model}')
 
 # -----------------------------------------------------------------------------
 # Draw the actual page
