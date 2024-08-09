@@ -137,17 +137,17 @@ tickers = tickers_df.iloc[:,0]
 
 construct_sidebar()
 
-if tabs =='Dashboard':
-    st.title("Navigation Bar")
-    st.write('Name of option is {}'.format(tabs))
+# if tabs =='Dashboard':
+#     st.title("Navigation Bar")
+#     st.write('Name of option is {}'.format(tabs))
 
-elif tabs == 'Money':
-    st.title("Paper")
-    st.write('Name of option is {}'.format(tabs))
+# elif tabs == 'Money':
+#     st.title("Paper")
+#     st.write('Name of option is {}'.format(tabs))
 
-elif tabs == 'Economy':
-    st.title("Tom")
-    st.write('Name of option is {}'.format(tabs))
+# elif tabs == 'Economy':
+#     st.title("Tom")
+#     st.write('Name of option is {}'.format(tabs))
 
 
 
