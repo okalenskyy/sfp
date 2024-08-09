@@ -94,19 +94,19 @@ def construct_sidebar():
     # -test
 
         models = ['LSTM','2','3']
-        selected_model = pills('Select Model', models, ["🟠","🟡","🟢"])
-        # # ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"]
         # Load the tickers
         tickers_df = get_tickers()
         tickers = tickers_df.iloc[:,0]
 
+        selected_model = pills('Select Model', models, ["🟠","🟡","🟢"])
+        # # ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"]
 # -/test
         selected_ticker = st.selectbox('Ticker:', tickers)
         # ok=0
 
         # for i in range(int(st.number_input('Num:'))): ok=ok+1
         # if st.sidebar.selectbox('I:',['f','j']) == 'f':
-        #     my_slider_val = st.slider('Quinn Mallory', 1, 88)
+        my_slider_val = st.slider('Prediction days', 1, 7)
         #     st.write(my_slider_val)
         st.write(f'{selected_ticker}')
 
@@ -125,15 +125,15 @@ def construct_sidebar():
 ''
 ''
 
-button_css = "css/button.css"
-button_css_content = load_css(button_css)
+# button_css = "css/button.css"
+# button_css_content = load_css(button_css)
 
-models = ['LSTM','2','3']
+# models = ['LSTM','2','3']
 
 
-# Load the tickers
-tickers_df = get_tickers()
-tickers = tickers_df.iloc[:,0]
+# # Load the tickers
+# tickers_df = get_tickers()
+# tickers = tickers_df.iloc[:,0]
 
 
 # --------------
