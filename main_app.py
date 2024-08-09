@@ -85,6 +85,19 @@ def predict():
                          index=y_test.index.values)
     y_pred_df.plot()
 
+def construct_sidebar():
+    # with st.sidebar:
+    # tabs = on_hover_tabs(tabName=['Dashboard', 'Money', 'Economy'], 
+    #                      iconName=['dashboard', 'money', 'economy'], default_choice=0)
+    
+    # Use widgets' returned values in variables
+    ok=0
+
+    for i in range(int(st.number_input('Num:'))): ok=ok+1
+    if st.sidebar.selectbox('I:',['f','j']) == 'f':
+        my_slider_val = st.slider('Quinn Mallory', 1, 88)
+        st.write(my_slider_val)
+        st.write(f'{ok}')
 # -----------------------------------------------------------------------------
 # Draw the actual page
 
@@ -109,18 +122,20 @@ tickers = tickers_df.iloc[:,0]
 
 
 # --------------
-with st.sidebar:
-    tabs = on_hover_tabs(tabName=['Dashboard', 'Money', 'Economy'], 
-                         iconName=['dashboard', 'money', 'economy'], default_choice=0)
+# with st.sidebar:
+#     tabs = on_hover_tabs(tabName=['Dashboard', 'Money', 'Economy'], 
+#                          iconName=['dashboard', 'money', 'economy'], default_choice=0)
     
-    # Use widgets' returned values in variables
-    ok=0
-    
-    for i in range(int(st.number_input('Num:'))): ok=ok+1
-    if st.sidebar.selectbox('I:',['f','j']) == 'f':
-        my_slider_val = st.slider('Quinn Mallory', 1, 88)
-        st.write(my_slider_val)
-        st.write(f'{ok}')
+#     # Use widgets' returned values in variables
+#     ok=0
+
+#     for i in range(int(st.number_input('Num:'))): ok=ok+1
+#     if st.sidebar.selectbox('I:',['f','j']) == 'f':
+#         my_slider_val = st.slider('Quinn Mallory', 1, 88)
+#         st.write(my_slider_val)
+#         st.write(f'{ok}')
+
+construct_sidebar():
 
 if tabs =='Dashboard':
     st.title("Navigation Bar")
