@@ -114,6 +114,8 @@ with st.sidebar:
                          iconName=['dashboard', 'money', 'economy'], default_choice=0)
     
     # Use widgets' returned values in variables
+    ok=0
+    
     for i in range(int(st.number_input('Num:'))): ok=ok+1
     if st.sidebar.selectbox('I:',['f','j']) == 'f':
         my_slider_val = st.slider('Quinn Mallory', 1, 88)
