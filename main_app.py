@@ -91,13 +91,14 @@ def construct_sidebar():
     #                      iconName=['dashboard', 'money', 'economy'], default_choice=0)
     
     # Use widgets' returned values in variables
-        ok=0
+        selected_ticker = st.selectbox('Ticker:', tickers)
+        # ok=0
 
-        for i in range(int(st.number_input('Num:'))): ok=ok+1
-        if st.sidebar.selectbox('I:',['f','j']) == 'f':
-            my_slider_val = st.slider('Quinn Mallory', 1, 88)
-            st.write(my_slider_val)
-            st.write(f'{ok}')
+        # for i in range(int(st.number_input('Num:'))): ok=ok+1
+        # if st.sidebar.selectbox('I:',['f','j']) == 'f':
+        #     my_slider_val = st.slider('Quinn Mallory', 1, 88)
+        #     st.write(my_slider_val)
+        st.write(f'{selected_ticker}')
 
 # -----------------------------------------------------------------------------
 # Draw the actual page
@@ -158,7 +159,7 @@ col1, col2 = st.columns([1,4])
 
 with col1:
     # Select box to choose one item from the list
-    selected_ticker = st.selectbox('Ticker:', tickers)
+    # selected_ticker = st.selectbox('Ticker:', tickers)
     begin_date = st.date_input('Begin Date')
     end_date = st.date_input('End Date')
 
