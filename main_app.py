@@ -118,7 +118,7 @@ with st.sidebar:
     if st.sidebar.selectbox('I:',['f','j']) == 'f':
         my_slider_val = st.slider('Quinn Mallory', 1, 88)
         st.write(my_slider_val)
-        st.write(ok)
+        st.write(f'{ok}')
 
 if tabs =='Dashboard':
     st.title("Navigation Bar")
