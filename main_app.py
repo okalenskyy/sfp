@@ -84,7 +84,7 @@ def predict():
                          index=y_test.index.values)
     y_pred_df.plot()
 def draw_page():
-    return("
+    return('
                 '''
                 #  :chart: Stocks Forecasting
 
@@ -94,7 +94,7 @@ def draw_page():
                 # Add some spacing
                 ''
                 ''
-           ")
+           ,)
 def construct_sidebar():
     with st.sidebar:
     # tabs = on_hover_tabs(tabName=['Dashboard', 'Money', 'Economy'], 
