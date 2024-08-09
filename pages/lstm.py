@@ -1,5 +1,0 @@
-'''
- #  :chart: TEST
-
- test
-'''
