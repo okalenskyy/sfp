@@ -135,7 +135,7 @@ tickers = tickers_df.iloc[:,0]
 #         st.write(my_slider_val)
 #         st.write(f'{ok}')
 
-construct_sidebar():
+construct_sidebar()
 
 if tabs =='Dashboard':
     st.title("Navigation Bar")
