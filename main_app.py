@@ -85,7 +85,6 @@ def predict():
                          index=y_test.index.values)
     y_pred_df.plot()
 
-@st.cache_data
 def construct_sidebar():
     with st.sidebar:
     # tabs = on_hover_tabs(tabName=['Dashboard', 'Money', 'Economy'], 
@@ -99,7 +98,7 @@ def construct_sidebar():
             my_slider_val = st.slider('Quinn Mallory', 1, 88)
             st.write(my_slider_val)
             st.write(f'{ok}')
-            
+
 # -----------------------------------------------------------------------------
 # Draw the actual page
 
