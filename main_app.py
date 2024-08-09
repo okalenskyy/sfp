@@ -94,6 +94,8 @@ def construct_sidebar():
     # -test
 
         models = ['LSTM','2','3']
+        selected_model = pills('Select Model', models, ["🟠","🟡","🟢"])
+        # # ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"]
         # Load the tickers
         tickers_df = get_tickers()
         tickers = tickers_df.iloc[:,0]
@@ -127,6 +129,8 @@ button_css = "css/button.css"
 button_css_content = load_css(button_css)
 
 models = ['LSTM','2','3']
+
+
 # Load the tickers
 tickers_df = get_tickers()
 tickers = tickers_df.iloc[:,0]
