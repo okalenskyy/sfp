@@ -90,6 +90,15 @@ def construct_sidebar():
     #                      iconName=['dashboard', 'money', 'economy'], default_choice=0)
     
     # Use widgets' returned values in variables
+
+    # -test
+
+        models = ['LSTM','2','3']
+        # Load the tickers
+        tickers_df = get_tickers()
+        tickers = tickers_df.iloc[:,0]
+
+# -/test
         selected_ticker = st.selectbox('Ticker:', tickers)
         # ok=0
 
@@ -98,14 +107,7 @@ def construct_sidebar():
         #     my_slider_val = st.slider('Quinn Mallory', 1, 88)
         #     st.write(my_slider_val)
         st.write(f'{selected_ticker}')
-# -test
 
-        models = ['LSTM','2','3']
-        # Load the tickers
-        tickers_df = get_tickers()
-        tickers = tickers_df.iloc[:,0]
-
-# -/test
 
 
 # -----------------------------------------------------------------------------
