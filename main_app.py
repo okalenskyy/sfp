@@ -102,7 +102,7 @@ def construct_sidebar():
         selected_model = pills('Select Model', models, ["🟠","🟡","🟢"])
         # # ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"]
 
-        st.write(st.get_option("backgroundColor"))
+        st.write(st.get_option("theme.backgroundColor"))
 # -/test
 
         # ok=0
