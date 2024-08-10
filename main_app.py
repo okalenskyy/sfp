@@ -189,13 +189,12 @@ def predict():
 
 
 # ----[ NEW ]-------
-# def render_page():
-    # sfpUI = UI('main')
-    # st.markdown('#  :chart: Stocks Forecasting \n Forecasting of the stock market data with different models.')
-    # with st.sidebar:
-    #     selected_model = pills('Select Model', sfpUI.models,sfpUI.icons)
-    #     my_slider_val = st.slider('Prediction days', 1, sfpUI.predict_days)
+def render_page():
+    sfpUI = UI('main')
+    st.markdown('#  :chart: Stocks Forecasting \n Forecasting of the stock market data with different models.')
+    with st.sidebar:
+        selected_model = pills('Select Model', sfpUI.models,sfpUI.icons)
+        my_slider_val = st.slider('Prediction days', 1, sfpUI.predict_days)
 
-# render_page()
+render_page()
 
-st.markdown('#  :chart: Stocks Forecasting \n Forecasting of the stock market data with different models.')
