@@ -6,9 +6,9 @@ class PageUI():
        """
        Initialise PageUI with minimum required parameters
        """
-       self.title:str = title
+       self.title:str = "# " + title
        self.icon:str = icon
        self.subtitle:str = subtitle
 
-       
+
 

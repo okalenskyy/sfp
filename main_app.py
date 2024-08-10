@@ -8,7 +8,6 @@ from Classes.YahooTickerClass import YahooTicker
 from streamlit_pills import pills
 from streamlit_extras.stylable_container import stylable_container
 
-
 from st_on_hover_tabs import on_hover_tabs
 
 # st.set_page_config(layout="wide")
@@ -26,11 +25,11 @@ st.set_page_config(
 # -----------------------------------------------------------------------------
 # Declare some useful functions.
 
-@st.cache_data
-def load_css(file_name):
-    with open(file_name) as f:
-        css = f.read()
-    return css
+# @st.cache_data
+# def load_css(file_name):
+#     with open(file_name) as f:
+#         css = f.read()
+#     return css
 
 def fetch_data(ticker, start_date, end_date):
     # Create an instance of the class
@@ -130,6 +129,21 @@ st.markdown('#  :chart: Stocks Forecasting \n Forecasting of the stock market da
 ''
 
 construct_sidebar()
+
+tab1, tab2, tab3 = st.tabs(["Cat", "Dog", "Owl"])
+
+with tab1:
+   st.header("A cat")
+   st.image("https://static.streamlit.io/examples/cat.jpg", width=200)
+
+with tab2:
+   st.header("A dog")
+   st.image("https://static.streamlit.io/examples/dog.jpg", width=200)
+
+with tab3:
+   st.header("An owl")
+   st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
+
 
 # if tabs =='Dashboard':
 #     st.title("Navigation Bar")
