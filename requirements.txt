@@ -13,4 +13,5 @@ keras
 #keras.layers
 #pandas
 #pathlib
-json
+#json
+pyjson5
