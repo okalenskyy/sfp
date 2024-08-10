@@ -98,11 +98,11 @@ def construct_sidebar():
         tickers = tickers_df.iloc[:,0]
         selected_ticker = st.selectbox('Ticker:', tickers)
 
-        models = ['LSTM','2','3']
-        selected_model = pills('Select Model', models, ["🟠","🟡","🟢"])
+        models = ['LSTM','Model 2','Model 3','Model 4','Model 5','Model 6','Model 7','Model 8','Model 9']
+        selected_model = pills('Select Model', models, ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"])
+        
         # # ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"]
 
-        st.write(tabs)
 # -/test
 
         # ok=0
