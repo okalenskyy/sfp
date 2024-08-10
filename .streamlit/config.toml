@@ -1,5 +1,3 @@
-title = "TOML Application setup"
-
 # - theme ----------------------------------------------------------------------------
 [theme]
 # The preset Streamlit theme that your custom theme inherits from.
