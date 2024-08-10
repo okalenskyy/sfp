@@ -22,34 +22,34 @@ textColor = "#fffafa"
 # "serif", or "monospace".
 font = "sans serif"
 
-# - global ----------------------------------------------------------------------------
-[global]
-# By default, Streamlit displays a warning when a user sets both a widget
-# default value in the function defining the widget and a widget value via
-# the widget's key in `st.session_state`.
-# If you'd like to turn off this warning, set this to True.
-# Default: false
-disableWidgetStateDuplicationWarning = false
+# # - global ----------------------------------------------------------------------------
+# [global]
+# # By default, Streamlit displays a warning when a user sets both a widget
+# # default value in the function defining the widget and a widget value via
+# # the widget's key in `st.session_state`.
+# # If you'd like to turn off this warning, set this to True.
+# # Default: false
+# disableWidgetStateDuplicationWarning = false
 
-# If True, will show a warning when you run a Streamlit-enabled script
-# via "python my_script.py".
-# Default: true
-showWarningOnDirectExecution = true
+# # If True, will show a warning when you run a Streamlit-enabled script
+# # via "python my_script.py".
+# # Default: true
+# showWarningOnDirectExecution = true
 
-# - logger ----------------------------------------------------------------------------
-[logger]
-# Level of logging: 'error', 'warning', 'info', or 'debug'.
-# Default: 'info'
-level = "info"
+# # - logger ----------------------------------------------------------------------------
+# [logger]
+# # Level of logging: 'error', 'warning', 'info', or 'debug'.
+# # Default: 'info'
+# level = "info"
 
-# String format for logging messages. If logger.datetimeFormat is set,
-# logger messages will default to `%(asctime)s.%(msecs)03d %(message)s`. See
-# Python's documentation for available attributes:
-# https://docs.python.org/2.6/library/logging.html#formatter-objects
-# Default: "%(asctime)s %(message)s"
-messageFormat = "%(asctime)s %(message)s"
+# # String format for logging messages. If logger.datetimeFormat is set,
+# # logger messages will default to `%(asctime)s.%(msecs)03d %(message)s`. See
+# # Python's documentation for available attributes:
+# # https://docs.python.org/2.6/library/logging.html#formatter-objects
+# # Default: "%(asctime)s %(message)s"
+# messageFormat = "%(asctime)s %(message)s"
 
-# - client ----------------------------------------------------------------------------
+# # - client ----------------------------------------------------------------------------
 [client]
 # Controls whether uncaught app exceptions and deprecation warnings
 # are displayed in the browser. By default, this is set to True and
