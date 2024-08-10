@@ -123,8 +123,7 @@ def construct_sidebar():
 '''
 
 
-st.markdown('#  :chart: Stocks Forecasting 2 ')
-st.markdown('Forecasting of the stock market data with different models.')
+st.markdown('#  :chart: Stocks Forecasting 2 \n Forecasting of the stock market data with different models.')
 # Add some spacing
 ''
 ''
