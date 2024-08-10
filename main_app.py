@@ -101,6 +101,8 @@ def construct_sidebar():
         models = ['LSTM','2','3']
         selected_model = pills('Select Model', models, ["🟠","🟡","🟢"])
         # # ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"]
+
+        st.write(st.get_option("backgroundColor"))
 # -/test
 
         # ok=0
