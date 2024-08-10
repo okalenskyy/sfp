@@ -189,7 +189,7 @@ def predict():
 
 # ----[ NEW ]-------
 def render_page():
-    sfpUI = UI('main')
+    # sfpUI = UI('main')
     st.markdown('#  :chart: Stocks Forecasting \n Forecasting of the stock market data with different models.')
     # with st.sidebar:
     #     selected_model = pills('Select Model', sfpUI.models,sfpUI.icons)
