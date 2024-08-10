@@ -179,28 +179,6 @@ construct_sidebar()
 ''
 ''
 
-# Create a container
-with st.container():
-    st.subheader("This is the first container")
-    st.write("You can include multiple components within this container.")
-    st.button("Click me (Container 1)")
-
-# Create another container
-with st.container():
-    st.subheader("This is the second container")
-    st.write("This is a separate section.")
-    st.button("Click me (Container 2)")
-
-# Use the sidebar
-st.sidebar.header("Sidebar Example")
-st.sidebar.write("You can use the sidebar for additional information or navigation.")
-
-# Create a conclusion section
-with st.container():
-    st.subheader("Conclusion")
-    st.write("This example shows how to use containers in Streamlit for better structure.")
-
-
 
 
 # st.line_chart(
