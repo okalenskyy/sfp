@@ -86,8 +86,8 @@ def predict():
 
 def construct_sidebar():
     with st.sidebar:
-    # tabs = on_hover_tabs(tabName=['Dashboard', 'Money', 'Economy'], 
-    #                      iconName=['dashboard', 'money', 'economy'], default_choice=0)
+        tabs = on_hover_tabs(tabName=['Dashboard', 'Money', 'Economy'], 
+                          iconName=['dashboard', 'money', 'economy'], default_choice=0)
     
     # Use widgets' returned values in variables
 
@@ -102,7 +102,7 @@ def construct_sidebar():
         selected_model = pills('Select Model', models, ["🟠","🟡","🟢"])
         # # ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"]
 
-        st.write(st.get_option("theme.backgroundColor"))
+        st.write(tabs)
 # -/test
 
         # ok=0

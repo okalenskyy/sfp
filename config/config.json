@@ -1,0 +1,8 @@
+{
+    "title": "My Streamlit App",
+    "description": "This is a sample Streamlit application using an external JSON file for configuration.",
+    "input_data": {
+        "option1": "value1",
+        "option2": "value2"
+    }
+}
