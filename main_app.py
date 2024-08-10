@@ -122,6 +122,9 @@ def construct_sidebar():
  Forecasting of the stock market data with different models.
 '''
 
+
+st.markdown('#  :chart: Stocks Forecasting')
+st.markdown('Forecasting of the stock market data with different models.')
 # Add some spacing
 ''
 ''
