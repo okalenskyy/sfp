@@ -86,8 +86,8 @@ def predict():
 
 def construct_sidebar():
     with st.sidebar:
-        tabs = on_hover_tabs(tabName=['Dashboard', 'Money', 'Economy'], 
-                          iconName=['dashboard', 'money', 'economy'], default_choice=0)
+        # tabs = on_hover_tabs(tabName=['Dashboard', 'Money', 'Economy'], 
+        #                   iconName=['dashboard', 'money', 'economy'], default_choice=0)
     
     # Use widgets' returned values in variables
 
@@ -110,8 +110,7 @@ def construct_sidebar():
         # for i in range(int(st.number_input('Num:'))): ok=ok+1
         # if st.sidebar.selectbox('I:',['f','j']) == 'f':
         my_slider_val = st.slider('Prediction days', 1, 7)
-        #     st.write(my_slider_val)
-        st.write(f'{selected_ticker} - {selected_model} - {my_slider_val}')
+
 
 # -----------------------------------------------------------------------------
 # Draw the actual page
@@ -129,31 +128,6 @@ st.markdown('#  :chart: Stocks Forecasting \n Forecasting of the stock market da
 # Add some spacing
 ''
 ''
-
-# button_css = "css/button.css"
-# button_css_content = load_css(button_css)
-
-# models = ['LSTM','2','3']
-
-
-# # Load the tickers
-# tickers_df = get_tickers()
-# tickers = tickers_df.iloc[:,0]
-
-
-# --------------
-# with st.sidebar:
-#     tabs = on_hover_tabs(tabName=['Dashboard', 'Money', 'Economy'], 
-#                          iconName=['dashboard', 'money', 'economy'], default_choice=0)
-    
-#     # Use widgets' returned values in variables
-#     ok=0
-
-#     for i in range(int(st.number_input('Num:'))): ok=ok+1
-#     if st.sidebar.selectbox('I:',['f','j']) == 'f':
-#         my_slider_val = st.slider('Quinn Mallory', 1, 88)
-#         st.write(my_slider_val)
-#         st.write(f'{ok}')
 
 construct_sidebar()
 
@@ -205,7 +179,26 @@ construct_sidebar()
 ''
 ''
 
+# Create a container
+with st.container():
+    st.subheader("This is the first container")
+    st.write("You can include multiple components within this container.")
+    st.button("Click me (Container 1)")
 
+# Create another container
+with st.container():
+    st.subheader("This is the second container")
+    st.write("This is a separate section.")
+    st.button("Click me (Container 2)")
+
+# Use the sidebar
+st.sidebar.header("Sidebar Example")
+st.sidebar.write("You can use the sidebar for additional information or navigation.")
+
+# Create a conclusion section
+with st.container():
+    st.subheader("Conclusion")
+    st.write("This example shows how to use containers in Streamlit for better structure.")
 
 
 
