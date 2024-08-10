@@ -5,6 +5,8 @@ import yfinance as yf
 
 from lib.models import rnn_model, lstm_horizon_model
 from Classes.YahooTickerClass import YahooTicker
+from Classes.UIClass import UI
+
 from streamlit_pills import pills
 from streamlit_extras.stylable_container import stylable_container
 
@@ -16,11 +18,13 @@ from st_on_hover_tabs import on_hover_tabs
 # st.markdown('<style>' + open("css/styles.css").read() + '</style>', unsafe_allow_html=True)
 
 # Set the title and favicon that appear in the Browser's tab bar.
+
 st.set_page_config(
     page_title='Stocks Forecast Playground',
     page_icon=':chart:', # This is an emoji shortcode. Could be a URL too.
     layout='wide'
 )
+
 
 # -----------------------------------------------------------------------------
 # Declare some useful functions.
@@ -30,6 +34,7 @@ st.set_page_config(
 #     with open(file_name) as f:
 #         css = f.read()
 #     return css
+
 
 def fetch_data(ticker, start_date, end_date):
     # Create an instance of the class
@@ -83,66 +88,43 @@ def predict():
                          index=y_test.index.values)
     y_pred_df.plot()
 
-def construct_sidebar():
-    with st.sidebar:
-        # tabs = on_hover_tabs(tabName=['Dashboard', 'Money', 'Economy'], 
-        #                   iconName=['dashboard', 'money', 'economy'], default_choice=0)
+
+# def construct_sidebar():
+#     with st.sidebar:
+#         # tabs = on_hover_tabs(tabName=['Dashboard', 'Money', 'Economy'], 
+#         #                   iconName=['dashboard', 'money', 'economy'], default_choice=0)
     
-    # Use widgets' returned values in variables
+#     # Use widgets' returned values in variables
 
-    # -test
+#     # -test
 
-        # Load the tickers
-        tickers_df = get_tickers()
-        tickers = tickers_df.iloc[:,0]
-        selected_ticker = st.selectbox('Ticker:', tickers)
+#         # # Load the tickers
+#         # tickers_df = get_tickers()
+#         # tickers = tickers_df.iloc[:,0]
+#         # selected_ticker = st.selectbox('Ticker:', tickers)
 
-        models = ['LSTM','Model 2','Model 3','Model 4','Model 5','Model 6','Model 7','Model 8','Model 9']
-        selected_model = pills('Select Model', models, ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"])
+#         # models = ['LSTM','Model 2','Model 3','Model 4','Model 5','Model 6','Model 7','Model 8','Model 9']
+#         # selected_model = pills('Select Model', models, ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"])
         
-        # # ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"]
+#         # # # ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"]
 
-# -/test
+# # -/test
 
-        # ok=0
+#         # ok=0
 
-        # for i in range(int(st.number_input('Num:'))): ok=ok+1
-        # if st.sidebar.selectbox('I:',['f','j']) == 'f':
-        my_slider_val = st.slider('Prediction days', 1, 7)
-
-
-# -----------------------------------------------------------------------------
-# Draw the actual page
-
-# Set the title that appears at the top of the page.
-
-# '''
-#  #  :chart: Stocks Forecasting
-
-#  Forecasting of the stock market data with different models.
-# '''
+#         # for i in range(int(st.number_input('Num:'))): ok=ok+1
+#         # if st.sidebar.selectbox('I:',['f','j']) == 'f':
+#         my_slider_val = st.slider('Prediction days', 1, 7)
 
 
-st.markdown('#  :chart: Stocks Forecasting \n Forecasting of the stock market data with different models.')
+
+
+# st.markdown('#  :chart: Stocks Forecasting \n Forecasting of the stock market data with different models.')
 # Add some spacing
 ''
 ''
 
-construct_sidebar()
-
-tab1, tab2, tab3 = st.tabs(["Cat", "Dog", "Owl"])
-
-with tab1:
-   st.header("A cat")
-   st.image("https://static.streamlit.io/examples/cat.jpg", width=200)
-
-with tab2:
-   st.header("A dog")
-   st.image("https://static.streamlit.io/examples/dog.jpg", width=200)
-
-with tab3:
-   st.header("An owl")
-   st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
+# construct_sidebar()
 
 
 # if tabs =='Dashboard':
@@ -201,4 +183,15 @@ with tab3:
 #         y='GDP',
 #         color='Country Code',
 #     )
+
+
+
+
+# ----[ NEW ]-------
+def render_page():
+    sfpUI = UI('main')
+    st.markdown('#  :chart: Stocks Forecasting \n Forecasting of the stock market data with different models.')
+    with st.sidebar:
+        selected_model = pills('Select Model', sfpUI.models,sfpUI.icons)
+        my_slider_val = st.slider('Prediction days', 1, sfpUI.predict_days)
 

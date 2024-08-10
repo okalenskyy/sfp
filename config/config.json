@@ -1,8 +1,9 @@
 {
-    "title": "My Streamlit App",
-    "description": "This is a sample Streamlit application using an external JSON file for configuration.",
-    "input_data": {
-        "option1": "value1",
-        "option2": "value2"
-    }
+    "title": "Stocks Forecasting Playground",
+    "icon": ":chart:",
+    "subtitle": "Application of different ML models for Stocks Forecasting.",
+    "tickers_list_file": "data/nasdaq_tickers.csv",
+    "models": "LSTM,RNN",
+    "model_icons": "🟠,🟡",
+    "predict_days": 7
 }

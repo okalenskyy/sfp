@@ -11,3 +11,6 @@ scikit-learn
 keras
 #keras.models
 #keras.layers
+pandas
+pathlib
+json
