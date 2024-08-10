@@ -116,14 +116,14 @@ def construct_sidebar():
 
 # Set the title that appears at the top of the page.
 
-'''
- #  :chart: Stocks Forecasting
+# '''
+#  #  :chart: Stocks Forecasting
 
- Forecasting of the stock market data with different models.
-'''
+#  Forecasting of the stock market data with different models.
+# '''
 
 
-st.markdown('#  :chart: Stocks Forecasting 2 \n Forecasting of the stock market data with different models.')
+st.markdown('#  :chart: Stocks Forecasting \n Forecasting of the stock market data with different models.')
 # Add some spacing
 ''
 ''
