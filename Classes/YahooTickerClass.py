@@ -21,7 +21,7 @@ class YahooTicker():
     """
     def __init__(self, ticker, start_date, end_date):
         """
-        Initialise the YahooTicker class with minimum required parameters
+        Initialise YahooTicker with minimum required parameters
         """
         self.ticker:str = ticker
         self.start_date:str = start_date
