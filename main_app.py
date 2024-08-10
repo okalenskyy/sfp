@@ -195,3 +195,4 @@ def render_page():
         selected_model = pills('Select Model', sfpUI.models,sfpUI.icons)
         my_slider_val = st.slider('Prediction days', 1, sfpUI.predict_days)
 
+render_page()
