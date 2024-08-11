@@ -74,8 +74,7 @@ def predict(ticker, model, begin_date, end_date):
     y_pred_df=pd.DataFrame({'LSTM test forecast':y_pred.reshape(-1),
                          'Original data':y_test['Open'].values},
                          index=y_test.index.values)
-    y_pred_df.plot()
-
+    return y_pred_df, y_test, sc
 
 
 
@@ -144,6 +143,8 @@ def render_page():
     st.markdown(f'## {sfpUI.icon} {sfpUI.title}')
     st.markdown(f'{sfpUI.subtitle}')
 
+    # run calculations ----
+    sfpUI.y_pred_df, sfpUI.y_test_df, sfpUI.sc = predict(sfpUI.selected_ticker, sfpUI.selected_model,'2020-01-01', '2024-08-01')
     # body--------
     tab_chart, tab_data, tab_model = st.tabs(["Chart", "Data", "Model"])
 
@@ -152,6 +153,7 @@ def render_page():
     
     with tab_data:
         st.header("Data")
+        st.dataframe(sfpUI.y_pred_df)
         
     with tab_model:
         st.header("Model")
@@ -161,4 +163,5 @@ def render_page():
 sfpUI:UI = render_page()
 
 # predict(sfpUI.selected_ticker, sfpUI.begin_date, sfpUI.end_date)
-predict(sfpUI.selected_ticker, sfpUI.selected_model,'2020-01-01', '2024-08-01')
+
+

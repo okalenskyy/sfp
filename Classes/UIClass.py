@@ -24,6 +24,10 @@ class UI():
 
        self.begin_date:str = ''
        self.end_date:str = ''
+
+       self.y_pred_df:pd.DataFrame = pd.DataFrame()
+       self.y_test_df:pd.DataFrame = pd.DataFrame()
+       self.sc  = {}
         
     
     def get_configuration(self):
