@@ -28,10 +28,10 @@ class UI():
         # self.tickers_df:pd.DataFrame = pd.DataFrame()
 
         self._selected_ticker_name:str = ''
-        # self._selected_ticker_country:str = ''
-        # self._selected_ticker_ipo_year:int = ''
-        # self._selected_ticker_sector:str = ''
-        # self._selected_ticker_industry:str = ''
+        self._selected_ticker_country:str = ''
+        self._selected_ticker_ipo_year:int = ''
+        self._selected_ticker_sector:str = ''
+        self._selected_ticker_industry:str = ''
 
         self.y_pred_df:pd.DataFrame = pd.DataFrame()
         self.y_test_df:pd.DataFrame = pd.DataFrame()
@@ -50,31 +50,52 @@ class UI():
         if not isinstance(value, str):
             raise TypeError("selected_ticker must be a str")
         self._selected_ticker = value
-        self.selected_ticker_name:str = self.tickers_df[self.tickers_df.Symbol == value].Name.values[0]
-        self.selected_ticker_country:str = self.tickers_df[self.tickers_df.Symbol == value].Country.values[0]
-        self.selected_ticker_ipo_year:int = int(self.tickers_df[self.tickers_df.Symbol == value].iloc[0,3])
-        self.selected_ticker_sector:str = self.tickers_df[self.tickers_df.Symbol == value].Sector.values[0]
-        self.selected_ticker_industry:str = self.tickers_df[self.tickers_df.Symbol == value].Industry.values[0]
+        self.selected_ticker_name = self.tickers_df[self.tickers_df.Symbol == value].Name.values[0]
+        self.selected_ticker_country = self.tickers_df[self.tickers_df.Symbol == value].Country.values[0]
+        self.selected_ticker_ipo_year = int(self.tickers_df[self.tickers_df.Symbol == value].iloc[0,3])
+        self.selected_ticker_sector = self.tickers_df[self.tickers_df.Symbol == value].Sector.values[0]
+        self.selected_ticker_industry = self.tickers_df[self.tickers_df.Symbol == value].Industry.values[0]
 
     @property
     def selected_ticker_name(self):
         return self._selected_ticker_name
     
+    @selected_ticker_name.setter
+    def selected_ticker_name(self, value):
+        self._selected_ticker_name=value
+
     @property
     def selected_ticker_country(self):
         return self._selected_ticker_country
-    
+
+    @selected_ticker_country.setter
+    def selected_ticker_country(self, value):
+        self._selected_ticker_country=value
+
     @property
     def selected_ticker_ipo_year(self):
         return self._selected_ticker_ipo_year
+
+    @selected_ticker_ipo_year.setter
+    def selected_ticker_ipo_year(self, value):
+        self._selected_ticker_ipo_year=value
 
     @property
     def selected_ticker_sector(self):
         return self._selected_ticker_sector
 
+    @selected_ticker_sector.setter
+    def selected_ticker_sector(self, value):
+        self._selected_ticker_sector=value
+
     @property
     def selected_ticker_industry(self):
         return self._selected_ticker_industry
+    
+    @selected_ticker_industry.setter
+    def selected_ticker_industry(self, value):
+        self._selected_ticker_industry=value
+
       
     def get_configuration(self):
         config_file_path = Path(__file__).parent.parent/'config/config.json'

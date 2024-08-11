@@ -145,7 +145,7 @@ def render_page():
         sfpUI.begin_date = st.date_input('Begin Date')
         sfpUI.end_date = st.date_input('End Date')
         
-        sfpUI.selected_ticker = st.selectbox('Ticker:',sfpUI.tickers)
+        sfpUI.selected_ticker = st.selectbox('Ticker:', sfpUI.tickers)
 
         st.write(f'{sfpUI.selected_ticker_name}')
     
