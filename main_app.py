@@ -90,42 +90,6 @@ def predict():
     y_pred_df.plot()
 
 
-# def construct_sidebar():
-#     with st.sidebar:
-#         # tabs = on_hover_tabs(tabName=['Dashboard', 'Money', 'Economy'], 
-#         #                   iconName=['dashboard', 'money', 'economy'], default_choice=0)
-    
-#     # Use widgets' returned values in variables
-
-#     # -test
-
-#         # # Load the tickers
-#         # tickers_df = get_tickers()
-#         # tickers = tickers_df.iloc[:,0]
-#         # selected_ticker = st.selectbox('Ticker:', tickers)
-
-#         # models = ['LSTM','Model 2','Model 3','Model 4','Model 5','Model 6','Model 7','Model 8','Model 9']
-#         # selected_model = pills('Select Model', models, ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"])
-        
-#         # # # ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"]
-
-# # -/test
-
-#         # ok=0
-
-#         # for i in range(int(st.number_input('Num:'))): ok=ok+1
-#         # if st.sidebar.selectbox('I:',['f','j']) == 'f':
-#         my_slider_val = st.slider('Prediction days', 1, 7)
-
-
-
-
-# st.markdown('#  :chart: Stocks Forecasting \n Forecasting of the stock market data with different models.')
-# Add some spacing
-''
-''
-
-# construct_sidebar()
 
 
 # if tabs =='Dashboard':
@@ -161,20 +125,12 @@ def predict():
 #     st.write(f'Sector: {tickers_df[tickers_df.Symbol == selected_ticker].Sector.values[0]}')
 #     st.write(f'Industry: {tickers_df[tickers_df.Symbol == selected_ticker].Industry.values[0]}')
     
-# selected_model = pills('Select Model', models, ["🟠","🟡","🟢"])
-# # ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"]
-# ''
-
 # with stylable_container(
 #     key="button",
 #     css_styles=button_css_content,
 # ):
 #     if st.button('Update prediction'):
 #         st.write('done')
-
-
-''
-''
 
 
 
@@ -191,7 +147,7 @@ def predict():
 # ----[ NEW ]-------
 def render_page():
     sfpUI = UI('main')
-    st.markdown('#  :chart: Stocks Forecasting \n Forecasting of the stock market data with different models.')
+    st.markdown(f'#  {sfpUI.icon}{sfpUI.title}\n {sfpUI.subtitle}')
     with st.sidebar:
         selected_ticker = st.selectbox('Ticker:',sfpUI.tickers)
         selected_model = pills('Select Model', sfpUI.models,sfpUI.icons)
