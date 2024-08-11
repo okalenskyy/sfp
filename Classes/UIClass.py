@@ -18,12 +18,12 @@ class UI():
        self.subtitle:str = self.config['subtitle']  
     
     def get_configuration(self):
-        config_file_path = Path(__file__).parent/'config/config.json'
+        config_file_path = Path(__file__).parent.parent/'config/config.json'
         with open(config_file_path) as json_file:
             self.config = json.load(json_file)
             
     def get_tickers(self):
-        tickers_file_path = Path(__file__).parent/'data/nasdaq_tickers.csv'
+        tickers_file_path = Path(__file__).parent.parent/'data/nasdaq_tickers.csv'
         # Fetch a list of stock tickers
         tickers_df = pd.read_csv(tickers_file_path)
         tickers_df.key = 'Symbol'
