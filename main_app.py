@@ -63,13 +63,23 @@ def setup_lstm(X_train, y_train):
 #         return []
 
 def predict(ticker, model, begin_date, end_date):
-    tickers_dataset = fetch_data(ticker, begin_date, end_date)
-    model = select_model(model, tickers_dataset[0], tickers_dataset[1])
-    y_pred=model.predict(tickers_dataset[0])
-    #get the right scaller
-    sc=tickers_dataset[4]['Open']
-    y_test=tickers_dataset[3].iloc[:-1]
+    # tickers_dataset = fetch_data(ticker, begin_date, end_date)
+    X_train, y_train, X_test, y_test, sc_extra = fetch_data(ticker, begin_date, end_date)
+    # model = select_model(model, tickers_dataset[0], tickers_dataset[1])
+    
+    model = select_model(model, X_train, y_train)
+    
 
+    # y_pred=model.predict(tickers_dataset[0])
+    y_pred=model.predict(X_train)
+    
+    #get the right scaller
+    # sc=tickers_dataset[4]['Open']
+    sc=sc_extra['Open']
+    
+
+    # y_test=tickers_dataset[3].iloc[:-1]
+    y_test=y_test.iloc[:-1]
 
     y_pred_df=pd.DataFrame({'LSTM test forecast':y_pred.reshape(-1),
                          'Original data':y_test['Open'].values},
