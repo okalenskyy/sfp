@@ -98,7 +98,7 @@ class UI():
     def construct_sidebar(self):
         # Load the tickers
         self.tickers_df = self.get_tickers()
-        self.tickers = tickers_df.iloc[:,0]
+        self.tickers = self.tickers_df.iloc[:,0]
 
         self.models = self.config['models'].split(',')
         self.icons = self.config['model_icons'].split(',')[:len(self.models)]
