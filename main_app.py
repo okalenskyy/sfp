@@ -11,7 +11,8 @@ from streamlit_pills import pills
 from streamlit_extras.stylable_container import stylable_container
 
 from st_on_hover_tabs import on_hover_tabs
-import json
+
+import flagpy as fp
 
 
 # -----------------------------------------------------------------------------
@@ -171,6 +172,7 @@ def render_page():
 
     st.write(f'{sfpUI.selected_ticker_name}')
     st.write(f'{sfpUI.selected_ticker_country}')
+    st.image(fp.get_flag_img(sfpUI.selected_ticker_country))
     st.write(f'{sfpUI.selected_ticker_ipo_year}')
     st.write(f'{sfpUI.selected_ticker_sector}')
     st.write(f'{sfpUI.selected_ticker_industry}')
