@@ -173,6 +173,9 @@ def render_page():
     st.write(f'{sfpUI.selected_ticker_name}')
     st.write(f'{sfpUI.selected_ticker_country}')
     st.image(fp.get_flag_img(sfpUI.selected_ticker_country))
+
+    st.image(fp.get_flag_img('USA'))
+
     st.write(f'{sfpUI.selected_ticker_ipo_year}')
     st.write(f'{sfpUI.selected_ticker_sector}')
     st.write(f'{sfpUI.selected_ticker_industry}')
