@@ -149,6 +149,7 @@ def render_page():
 
         st.write(f'{sfpUI.selected_ticker_name}')
     
+              
         # st.subheader(f'{tickers_df[tickers_df.Symbol == selected_ticker].Name.values[0]}')
         # st.write(f'{tickers_df[tickers_df.Symbol == selected_ticker].Country.values[0]}')
         # st.write(f'IPO Year: {int(tickers_df[tickers_df.Symbol == selected_ticker].iloc[0,3])}')
@@ -168,6 +169,12 @@ def render_page():
     st.markdown(f'## {sfpUI.icon} {sfpUI.title}')
     st.markdown(f'{sfpUI.subtitle}')
 
+    st.write(f'{sfpUI.selected_ticker_name}')
+    st.write(f'{sfpUI.selected_ticker_country}')
+    st.write(f'{sfpUI.selected_ticker_ipo_year}')
+    st.write(f'{sfpUI.selected_ticker_sector}')
+    st.write(f'{sfpUI.selected_ticker_industry}')
+    
     # run calculations ----
     #--->  sfpUI.y_pred_df, sfpUI.y_test_df, sfpUI.sc = predict(sfpUI.selected_ticker, sfpUI.selected_model,'2024-01-01', '2024-08-01')
     # body--------
