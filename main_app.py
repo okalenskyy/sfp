@@ -125,7 +125,7 @@ def render_page():
     
     
     # run calculations ----
-    #--->  sfpUI.y_pred_df, sfpUI.y_test_df, sfpUI.sc = predict(sfpUI.selected_ticker, sfpUI.selected_model,'2024-01-01', '2024-08-01')
+    sfpUI.y_pred_df, sfpUI.y_test_df, sfpUI.sc = predict(sfpUI.selected_ticker, sfpUI.selected_model,'2024-01-01', '2024-08-01')
     # body--------
     tab_chart, tab_data, tab_model = st.tabs(["Chart", "Data", "Model"])
 
@@ -143,6 +143,6 @@ def render_page():
 
 sfpUI:UI = render_page()
 
-predict(sfpUI.selected_ticker, sfpUI.begin_date, sfpUI.end_date)
+# predict(sfpUI.selected_ticker, sfpUI.begin_date, sfpUI.end_date)
 
 
