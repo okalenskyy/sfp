@@ -15,4 +15,3 @@ keras
 #pathlib
 #json
 pyjson5
-flagpy
