@@ -147,7 +147,8 @@ def predict():
 # ----[ NEW ]-------
 def render_page():
     sfpUI = UI('main')
-    st.markdown(f'# {sfpUI.icon} {sfpUI.title}\n ## {sfpUI.subtitle}')
+    st.markdown(f'# {sfpUI.icon} {sfpUI.title}')
+    st.markdown(f'{sfpUI.subtitle}')
     with st.sidebar:
         selected_ticker = st.selectbox('Ticker:',sfpUI.tickers)
         selected_model = pills('Select Model', sfpUI.models,sfpUI.icons)
