@@ -92,18 +92,6 @@ def predict():
 
 
 
-# if tabs =='Dashboard':
-#     st.title("Navigation Bar")
-#     st.write('Name of option is {}'.format(tabs))
-
-# elif tabs == 'Money':
-#     st.title("Paper")
-#     st.write('Name of option is {}'.format(tabs))
-
-# elif tabs == 'Economy':
-#     st.title("Tom")
-#     st.write('Name of option is {}'.format(tabs))
-
 
 
 #----------------
@@ -142,17 +130,37 @@ def predict():
 #     )
 
 
-
+  
 
 # ----[ NEW ]-------
 def render_page():
+    #init UI object
     sfpUI = UI('main')
-    st.markdown(f'## {sfpUI.icon} {sfpUI.title}')
-    st.markdown(f'{sfpUI.subtitle}')
+
+    # sidebar------
     with st.sidebar:
         selected_ticker = st.selectbox('Ticker:',sfpUI.tickers)
         selected_model = pills('Select Model', sfpUI.models,sfpUI.icons)
         my_slider_val = st.slider('Prediction days', 1, sfpUI.predict_days)
+
+    # header-------
+        st.markdown(f'## {sfpUI.icon} {sfpUI.title}')
+        st.markdown(f'{sfpUI.subtitle}')
+
+    # body--------
+    tab_chart, tab_data, tab_model = st.tabs(["Chart", "Data", "Model"])
+
+    with tab_chart:
+        st.header("Chart")
+        
+
+    with tab_data:
+        st.header("Data")
+        
+
+    with tab_model:
+        st.header("Model")
+        
 
 render_page()
 
