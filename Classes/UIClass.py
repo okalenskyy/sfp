@@ -44,8 +44,8 @@ class UI():
 
         # selected_ticker = st.selectbox('Ticker:', tickers)
         # self.models = ['LSTM','Model 2','Model 3','Model 4','Model 5','Model 6','Model 7','Model 8','Model 9']
-        self.models = self.config['models']
-        self.icons = self.config['model_icons']
+        self.models = self.config['models'].split(',')
+        self.icons = self.config['model_icons'].split(',')
         self.predict_days = self.config['predict_days']
 
         # selected_model = pills('Select Model', models, ["🟠","🟡","🟢","🟣","🟤","🔵","🔴","⚫","⚪"])
