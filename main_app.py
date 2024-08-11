@@ -193,8 +193,8 @@ def render_page():
     sfpUI = UI('main')
     st.markdown('#  :chart: Stocks Forecasting \n Forecasting of the stock market data with different models.')
     with st.sidebar:
+        selected_ticker = st.selectbox('Ticker:',sfpUI.tickers)
         selected_model = pills('Select Model', sfpUI.models,sfpUI.icons)
-        # selected_model = pills('Select Model', sfpUI.models,["🟡","🟢"])
         my_slider_val = st.slider('Prediction days', 1, sfpUI.predict_days)
 
 render_page()
