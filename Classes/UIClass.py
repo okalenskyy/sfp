@@ -50,11 +50,11 @@ class UI():
         if not isinstance(value, str):
             raise TypeError("dataset_size must be a str")
         self._selected_ticker = value
-        self._selected_ticker_name:str = self.tickers_df[tickers_df.Symbol == value].Name.values[0]
-        self._selected_ticker_country:str = self.tickers_df[self.tickers_df.Symbol == selected_ticker].Country.values[0]
-        self._selected_ticker_ipo_year:int = int(tickers_df[tickers_df.Symbol == selected_ticker].iloc[0,3])
-        self._selected_ticker_sector:str = tickers_df[tickers_df.Symbol == selected_ticker].Sector.values[0]
-        self._selected_ticker_industry:str = tickers_df[tickers_df.Symbol == selected_ticker].Industry.values[0]
+        self._selected_ticker_name:str = self.tickers_df[self.tickers_df.Symbol == value].Name.values[0]
+        self._selected_ticker_country:str = self.tickers_df[self.tickers_df.Symbol == value].Country.values[0]
+        self._selected_ticker_ipo_year:int = int(self.tickers_df[self.tickers_df.Symbol == value].iloc[0,3])
+        self._selected_ticker_sector:str = self.tickers_df[self.tickers_df.Symbol == value].Sector.values[0]
+        self._selected_ticker_industry:str = self.tickers_df[self.tickers_df.Symbol == value].Industry.values[0]
 
     @property
     def selected_ticker_name(self):
