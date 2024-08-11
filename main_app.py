@@ -163,7 +163,7 @@ def render_page():
         st.write(f'{sfpUI.selected_ticker_industry}')
     with col2:
         st.write(f'{sfpUI.selected_ticker_country}')
-        st.write(f'## {sfpUI.selected_ticker_ipo_year}')
+        st.write(f'{sfpUI.selected_ticker_ipo_year}')
     
     
     # run calculations ----
