@@ -146,6 +146,21 @@ def render_page():
         sfpUI.end_date = st.date_input('End Date')
         
         sfpUI.selected_ticker = st.selectbox('Ticker:',sfpUI.tickers)
+
+        st.write(f'{sfpUI.selected_ticker_name}')
+    
+        # st.subheader(f'{tickers_df[tickers_df.Symbol == selected_ticker].Name.values[0]}')
+        # st.write(f'{tickers_df[tickers_df.Symbol == selected_ticker].Country.values[0]}')
+        # st.write(f'IPO Year: {int(tickers_df[tickers_df.Symbol == selected_ticker].iloc[0,3])}')
+        # st.write(f'Sector: {tickers_df[tickers_df.Symbol == selected_ticker].Sector.values[0]}')
+        # st.write(f'Industry: {tickers_df[tickers_df.Symbol == selected_ticker].Industry.values[0]}')
+
+        # st.subheader(f'{tickers_df[tickers_df.Symbol == selected_ticker].Name.values[0]}')
+        # st.write(f'{tickers_df[tickers_df.Symbol == selected_ticker].Country.values[0]}')
+        # st.write(f'IPO Year: {int(tickers_df[tickers_df.Symbol == selected_ticker].iloc[0,3])}')
+        # st.write(f'Sector: {tickers_df[tickers_df.Symbol == selected_ticker].Sector.values[0]}')
+        # st.write(f'Industry: {tickers_df[tickers_df.Symbol == selected_ticker].Industry.values[0]}')
+
         sfpUI.selected_model = pills('Select Model', sfpUI.models,sfpUI.icons)
         sfpUI.pred_days = st.slider('Prediction days', 1, sfpUI.predict_days)
 
@@ -163,7 +178,7 @@ def render_page():
     
     with tab_data:
         st.header("Data")
-        st.dataframe(sfpUI.y_pred_df)
+        # st.dataframe(sfpUI.y_pred_df)
         
     with tab_model:
         st.header("Model")
