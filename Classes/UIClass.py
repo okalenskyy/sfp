@@ -30,8 +30,8 @@ class UI():
         self._selected_ticker_name:str = ''
         self._selected_ticker_country:str = ''
         self._selected_ticker_ipo_year:int = ''
-        self._self.selected_ticker_sector:str = ''
-        self._self.selected_ticker_industry:str = ''
+        self._selected_ticker_sector:str = ''
+        self._selected_ticker_industry:str = ''
 
         self.y_pred_df:pd.DataFrame = pd.DataFrame()
         self.y_test_df:pd.DataFrame = pd.DataFrame()
