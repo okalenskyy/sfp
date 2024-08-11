@@ -154,7 +154,7 @@ def render_page():
     st.markdown(f'{sfpUI.subtitle}')
 
     # run calculations ----
-    sfpUI.y_pred_df, sfpUI.y_test_df, sfpUI.sc = predict(sfpUI.selected_ticker, sfpUI.selected_model,'2020-01-01', '2024-08-01')
+    sfpUI.y_pred_df, sfpUI.y_test_df, sfpUI.sc = predict(sfpUI.selected_ticker, sfpUI.selected_model,'2024-01-01', '2024-08-01')
     # body--------
     tab_chart, tab_data, tab_model = st.tabs(["Chart", "Data", "Model"])
 
