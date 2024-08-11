@@ -143,6 +143,6 @@ def render_page():
 
 sfpUI:UI = render_page()
 
-# predict(sfpUI.selected_ticker, sfpUI.begin_date, sfpUI.end_date)
+predict(sfpUI.selected_ticker, sfpUI.begin_date, sfpUI.end_date)
 
 
