@@ -37,7 +37,6 @@ def fetch_data(ticker, start_date, end_date):
 def select_model(model, X_train, y_train):
     match model:
         case 'LSTM':
-            st.write('1')
             return(setup_lstm(X_train, y_train))         
         # If an exact match is not confirmed, this last case will be used if provided
         case _:
@@ -63,19 +62,19 @@ def setup_lstm(X_train, y_train):
 #         st.error(f"An error occurred while fetching tickers: {e}")
 #         return []
 
-def predict(ticker, begin_date, end_date):
+def predict(ticker, model, begin_date, end_date):
     tickers_dataset = fetch_data(ticker, begin_date, end_date)
-    model = select_model(ticker, tickers_dataset[0], tickers_dataset[1])
-    # y_pred=model.predict(tickers_dataset[0])
-    # #get the right scaller
-    # sc=tickers_dataset[4]['Open']
-    # y_test=tickers_dataset[3].iloc[:-1]
+    model = select_model(model, tickers_dataset[0], tickers_dataset[1])
+    y_pred=model.predict(tickers_dataset[0])
+    #get the right scaller
+    sc=tickers_dataset[4]['Open']
+    y_test=tickers_dataset[3].iloc[:-1]
 
 
-    # y_pred_df=pd.DataFrame({'LSTM test forecast':y_pred.reshape(-1),
-    #                      'Original data':y_test['Open'].values},
-    #                      index=y_test.index.values)
-    # y_pred_df.plot()
+    y_pred_df=pd.DataFrame({'LSTM test forecast':y_pred.reshape(-1),
+                         'Original data':y_test['Open'].values},
+                         index=y_test.index.values)
+    y_pred_df.plot()
 
 
 
@@ -162,4 +161,4 @@ def render_page():
 sfpUI:UI = render_page()
 
 # predict(sfpUI.selected_ticker, sfpUI.begin_date, sfpUI.end_date)
-predict(sfpUI.selected_ticker, '2020-01-01', '2024-08-01')
+predict(sfpUI.selected_ticker, sfpUI.selected_model,'2020-01-01', '2024-08-01')
