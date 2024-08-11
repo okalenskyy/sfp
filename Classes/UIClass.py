@@ -25,7 +25,7 @@ class UI():
         self.begin_date:str = ''
         self.end_date:str = ''
 
-        self.tickers_df:pd.DataFrame = pd.DataFrame()
+        # self.tickers_df:pd.DataFrame = pd.DataFrame()
 
         self._selected_ticker_name:str = ''
         self._selected_ticker_country:str = ''
