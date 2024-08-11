@@ -48,7 +48,7 @@ class UI():
     @selected_ticker.setter
     def selected_ticker(self, value):
         if not isinstance(value, str):
-            raise TypeError("dataset_size must be a str")
+            raise TypeError("selected_ticker must be a str")
         self._selected_ticker = value
         self._selected_ticker_name:str = self.tickers_df[self.tickers_df.Symbol == value].Name.values[0]
         self._selected_ticker_country:str = self.tickers_df[self.tickers_df.Symbol == value].Country.values[0]
@@ -84,9 +84,9 @@ class UI():
     def get_tickers(self):
         tickers_file_path = Path(__file__).parent.parent/'data/nasdaq_tickers.csv'
         # Fetch a list of stock tickers
-        tickers_df = pd.read_csv(tickers_file_path)
-        tickers_df.key = 'Symbol'
-        return tickers_df
+        self.tickers_df = pd.read_csv(tickers_file_path)
+        self.tickers_df.key = 'Symbol'
+        return self.tickers_df
 
     # def get_models_list(self):
     #     tickers_file_path = Path(__file__).parent/'data/nasdaq_tickers.csv'
@@ -97,7 +97,8 @@ class UI():
 
     def construct_sidebar(self):
         # Load the tickers
-        self.tickers_df = self.get_tickers()
+        # self.tickers_df = 
+        self.get_tickers()
         self.tickers = self.tickers_df.iloc[:,0]
 
         self.models = self.config['models'].split(',')
