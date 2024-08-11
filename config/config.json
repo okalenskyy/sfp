@@ -4,6 +4,6 @@
     "subtitle": "Application of different ML models for Stocks Forecasting.",
     "tickers_list_file": "data/nasdaq_tickers.csv",
     "models": "LSTM,RNN",
-    "model_icons": "🟠,🟡",
+    "model_icons": "🟠,🟡,🟢,🟣,🟤,🔵,🔴,⚫,⚪",
     "predict_days": 7
 }
