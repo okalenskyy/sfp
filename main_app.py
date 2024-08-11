@@ -155,15 +155,15 @@ def render_page():
     # st.markdown(f'{sfpUI.subtitle}')
     
 
-    st.write(f'### {sfpUI.selected_ticker_name}')
+    st.write(f'{sfpUI.selected_ticker_name}')
 
     col1, col2 = st.columns([4,1])
     with col1:
         st.write(f'{sfpUI.selected_ticker_sector}')
         st.write(f'{sfpUI.selected_ticker_industry}')
     with col2:
-        st.write(f'### {sfpUI.selected_ticker_country}')
-        st.write(f'## {sfpUI.selected_ticker_ipo_year}')
+        st.write(f'{sfpUI.selected_ticker_country}')
+        st.write(f'### {sfpUI.selected_ticker_ipo_year}')
     
     
     # run calculations ----
