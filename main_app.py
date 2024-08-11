@@ -62,18 +62,18 @@ def setup_lstm(X_train, y_train):
     return lstm_model
 
 
-@st.cache_data
-def get_tickers():
-    DATA_FILENAME = Path(__file__).parent/'data/nasdaq_tickers.csv'
+# @st.cache_data
+# def get_tickers():
+#     DATA_FILENAME = Path(__file__).parent/'data/nasdaq_tickers.csv'
   
-    try:
-        # Fetch a list of stock tickers
-        tickers_df = pd.read_csv(DATA_FILENAME)
-        tickers_df.key = 'Symbol'
-        return tickers_df
-    except Exception as e:
-        st.error(f"An error occurred while fetching tickers: {e}")
-        return []
+#     try:
+#         # Fetch a list of stock tickers
+#         tickers_df = pd.read_csv(DATA_FILENAME)
+#         tickers_df.key = 'Symbol'
+#         return tickers_df
+#     except Exception as e:
+#         st.error(f"An error occurred while fetching tickers: {e}")
+#         return []
 
 def predict():
     tickers_dataset = fetch_data(selected_ticker, begin_date, end_date)
@@ -136,7 +136,12 @@ def predict():
 def render_page():
     #init UI object
     sfpUI = UI('main')
-
+    # page---------
+    st.set_page_config(
+    page_title={sfpUI.title},
+    page_icon={sfpUI.icon}, 
+    layout='wide'
+)
     # sidebar------
     with st.sidebar:
         selected_ticker = st.selectbox('Ticker:',sfpUI.tickers)
@@ -152,12 +157,10 @@ def render_page():
 
     with tab_chart:
         st.header("Chart")
-        
-
+    
     with tab_data:
         st.header("Data")
         
-
     with tab_model:
         st.header("Model")
         
