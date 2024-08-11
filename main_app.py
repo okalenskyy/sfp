@@ -144,8 +144,8 @@ def render_page():
         my_slider_val = st.slider('Prediction days', 1, sfpUI.predict_days)
 
     # header-------
-        st.markdown(f'## {sfpUI.icon} {sfpUI.title}')
-        st.markdown(f'{sfpUI.subtitle}')
+    st.markdown(f'## {sfpUI.icon} {sfpUI.title}')
+    st.markdown(f'{sfpUI.subtitle}')
 
     # body--------
     tab_chart, tab_data, tab_model = st.tabs(["Chart", "Data", "Model"])
