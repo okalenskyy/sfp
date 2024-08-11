@@ -138,8 +138,8 @@ def render_page():
     sfpUI = UI('main')
     # page---------
     st.set_page_config(
-        page_title={sfpUI.title},
-        page_icon={sfpUI.icon}, 
+        page_title=sfpUI.title,
+        page_icon=sfpUI.icon, 
         layout='wide'
        )
     
