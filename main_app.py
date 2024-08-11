@@ -84,48 +84,6 @@ def predict(ticker, model, begin_date, end_date):
                          index=y_test.index.values)
     return y_pred_df, y_test, sc
 
-
-
-
-
-#----------------
-
-# col1, col2 = st.columns([1,4])
-
-# with col1:
-#     # Select box to choose one item from the list
-#     # selected_ticker = st.selectbox('Ticker:', tickers)
-#     begin_date = st.date_input('Begin Date')
-#     end_date = st.date_input('End Date')
-
-# with col2:
-#     ''
-#     st.subheader(f'{tickers_df[tickers_df.Symbol == selected_ticker].Name.values[0]}')
-#     ''
-#     st.write(f'{tickers_df[tickers_df.Symbol == selected_ticker].Country.values[0]}')
-#     st.write(f'IPO Year: {int(tickers_df[tickers_df.Symbol == selected_ticker].iloc[0,3])}')
-#     st.write(f'Sector: {tickers_df[tickers_df.Symbol == selected_ticker].Sector.values[0]}')
-#     st.write(f'Industry: {tickers_df[tickers_df.Symbol == selected_ticker].Industry.values[0]}')
-    
-# with stylable_container(
-#     key="button",
-#     css_styles=button_css_content,
-# ):
-#     if st.button('Update prediction'):
-#         st.write('done')
-
-
-
-# st.line_chart(
-#         filtered_gdp_df,
-#         x='Year',
-#         y='GDP',
-#         color='Country Code',
-#     )
-
-
-  
-
 # ----[ NEW ]-------
 def render_page():
     #init UI object
