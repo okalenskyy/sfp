@@ -157,7 +157,7 @@ def render_page():
 
     st.subheader(f'{sfpUI.selected_ticker_name}')
 
-    col1, col2 = st.columns([3,2])
+    col1, col2 = st.columns([3,1])
     with col1:
         st.write(f'{sfpUI.selected_ticker_sector}')
         st.write(f'{sfpUI.selected_ticker_industry}')
