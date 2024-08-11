@@ -14,7 +14,7 @@ class UI():
        self.get_configuration()
        self.construct_sidebar()
 
-       self.title:str = "# " + self.config['title'] 
+       self.title:str = self.config['title'] 
        self.icon:str = self.config['icon']  
        self.subtitle:str = self.config['subtitle']  
     
