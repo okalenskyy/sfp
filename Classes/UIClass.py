@@ -17,6 +17,14 @@ class UI():
        self.title:str = self.config['title'] 
        self.icon:str = self.config['icon']  
        self.subtitle:str = self.config['subtitle']  
+
+       self.selected_ticker:str = ''
+       self.selected_model:str = ''
+       self.pred_days:int=1 
+
+       self.begin_date:str = ''
+       self.end_date:str = ''
+        
     
     def get_configuration(self):
         config_file_path = Path(__file__).parent.parent/'config/config.json'

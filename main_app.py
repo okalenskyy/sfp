@@ -62,9 +62,9 @@ def setup_lstm(X_train, y_train):
 #         st.error(f"An error occurred while fetching tickers: {e}")
 #         return []
 
-def predict():
-    tickers_dataset = fetch_data(selected_ticker, begin_date, end_date)
-    model = select_model(selected_ticker, tickers_dataset[0], tickers_dataset[1])
+def predict(ticker, begin_date, end_date):
+    tickers_dataset = fetch_data(ticker, begin_date, end_date)
+    model = select_model(ticker, tickers_dataset[0], tickers_dataset[1])
     y_pred=model.predict(tickers_dataset[0])
     #get the right scaller
     sc=tickers_dataset[4]['Open']
@@ -132,9 +132,13 @@ def render_page():
     
     # sidebar------
     with st.sidebar:
-        selected_ticker = st.selectbox('Ticker:',sfpUI.tickers)
-        selected_model = pills('Select Model', sfpUI.models,sfpUI.icons)
-        my_slider_val = st.slider('Prediction days', 1, sfpUI.predict_days)
+
+        sfpUI.begin_date = st.date_input('Begin Date')
+        sfpUI.end_date = st.date_input('End Date')
+        
+        sfpUI.selected_ticker = st.selectbox('Ticker:',sfpUI.tickers)
+        sfpUI.selected_model = pills('Select Model', sfpUI.models,sfpUI.icons)
+        sfpUI.pred_days = st.slider('Prediction days', 1, sfpUI.predict_days)
 
     # header-------
     st.markdown(f'## {sfpUI.icon} {sfpUI.title}')
@@ -151,7 +155,9 @@ def render_page():
         
     with tab_model:
         st.header("Model")
-        
 
-render_page()
-predict()
+    return(sfpUI)   
+
+sfpUI:UI = render_page()
+
+predict(sfpUI.selected_ticker, sfpUI.begin_date, sfpUI.end_date))
