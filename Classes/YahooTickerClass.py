@@ -483,5 +483,5 @@ class YahooTicker():
 
         if reshape_for_lstm:
             self._reshape_for_lstm()
-        print(f'{self.X_train=})
+        print self.X_train.shape
         return(self.X_train, self.y_train, self.X_test, self.real_stock_price, self.scaler)
