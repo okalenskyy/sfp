@@ -77,7 +77,7 @@ class UI():
         self._selected_model = value
         match value:
             case 'LSTM':
-                self.model = lstm_horizon_model(self.X_train, selfy_train)      
+                self.model = lstm_horizon_model(self.X_train, self.y_train)      
             case 'RNN':
                 self.model = rnn_model(self.X_train)      
             # If an exact match is not confirmed, this last case will be used if provided
