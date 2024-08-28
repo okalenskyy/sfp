@@ -111,6 +111,6 @@ sfpUI:UI = ini_UI_adapter()
 init_page(sfpUI)
 init_side_bar(sfpUI)
 # update_data(sfpUI)
-render_page(sfpUI)
+# render_page(sfpUI)
 
 
