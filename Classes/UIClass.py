@@ -239,13 +239,14 @@ class UI():
     def predict(self):
         self.X_train, self.y_train, self.X_test, self.y_test, self.sc_extra = self.fetch_data(self.selected_ticker, self.begin_date, self.end_date)
         self.y_pred=self.selected_model.predict(self.X_train)
+        self.y_pred=self.sc.inverse_transform(self.y_pred)
     
         #get the right scaller
         self.sc=self.sc_extra['Open']
     
         self.y_test=self.y_test.iloc[:-1]
 
-        self.y_pred_df=pd.DataFrame({'LSTM test forecast':y_pred.reshape(-1),
-                               'Original data':y_test['Open'].values},
-                               index=y_test.index.values)
+        self.y_pred_df=pd.DataFrame({'LSTM test forecast':self.y_pred.reshape(-1),
+                               'Original data':self.y_test['Open'].values},
+                               index=self.y_test.index.values)
     
