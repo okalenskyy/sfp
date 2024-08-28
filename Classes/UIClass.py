@@ -234,4 +234,18 @@ class UI():
     def prepare_datasets(self, training_data_percent:float = 0.2, n_lags:int=60, predict_days:int=0, target_column:str=None, extra_features=[], reshape_for_lstm:bool=False):
         self.X_train, self.y_train, self.X_test, self.y_test, self.sc = self.SelectedTicker.prepare_data_feat_step(n_lags = 1, training_data_percent = 0.3, target_column='Open',extra_features=['Close'], reshape_for_lstm=True) #.   'Close'
         
-        
+    # ////
+     
+    def predict(self):
+        self.X_train, self.y_train, self.X_test, self.y_test, self.sc_extra = self.fetch_data(self.selected_ticker, self.begin_date, self.end_date)
+        self.y_pred=self.selected_model.predict(self.X_train)
+    
+        #get the right scaller
+        self.sc=self.sc_extra['Open']
+    
+        self.y_test=self.y_test.iloc[:-1]
+
+        self.y_pred_df=pd.DataFrame({'LSTM test forecast':y_pred.reshape(-1),
+                               'Original data':y_test['Open'].values},
+                               index=y_test.index.values)
+    

@@ -69,7 +69,8 @@ def init_side_bar(adapter: UI):
 
 def update_data(adapter: UI):
  # run calculations ---- TODO
-    adapter.y_pred_df, adapter.y_test_df, sfpUI.sc = predict(adapter.selected_ticker, adapter.selected_model,'2024-01-01', '2024-08-01')
+    # adapter.y_pred_df, adapter.y_test_df, sfpUI.sc = 
+    adapter.predict(adapter)
 
 def render_page(adapter: UI):
     # header-------
