@@ -104,9 +104,9 @@ def render_page():
 # sfpUI.
 # predict(sfpUI.selected_ticker, sfpUI.begin_date, sfpUI.end_date)
 
-init_page
-init_side_bar
+init_page()
+init_side_bar()
 # update_data
-render_page
+render_page()
 
 
