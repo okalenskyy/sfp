@@ -7,7 +7,7 @@ from lib.models import rnn_model, lstm_horizon_model
 
 class UI():
     """
-    UI handler Class
+    UI Adapter Class
     """
     def __init__(self, id:str):
         """
