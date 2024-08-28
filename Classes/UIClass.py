@@ -25,8 +25,8 @@ class UI():
         self._selected_model:str = ''
         self.pred_days:int=1 
 
-        self.begin_date:str = ''
-        self.end_date:str = ''
+        self._begin_date:str = ''
+        self._end_date:str = ''
 
         # self.tickers_df:pd.DataFrame = pd.DataFrame()
 
@@ -91,6 +91,22 @@ class UI():
 #     return lstm_model
 
 # ---------
+    @property
+    def begin_date(self):
+        return self._begin_date
+    
+    @begin_date.setter
+    def begin_date(self, value):
+        self._begin_date=value
+
+    @property
+    def end_date(self):
+        return self._end_date
+    
+    @end_date.setter
+    def end_date(self, value):
+        self._end_date=value
+
     @property
     def selected_ticker_name(self):
         return self._selected_ticker_name

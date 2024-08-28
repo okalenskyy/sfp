@@ -54,7 +54,6 @@ def init_page():
 def init_side_bar():
     # sidebar------
     with st.sidebar:
-
         sfpUI.begin_date = st.date_input('Begin Date')
         sfpUI.end_date = st.date_input('End Date')
         
