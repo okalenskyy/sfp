@@ -446,6 +446,9 @@ class YahooTicker():
         """
         self.X_train = np.reshape(self.X_train, (self.X_train.shape[0], self.n_lags, len(self.columns_list)))
         self.X_test = np.reshape(self.X_test, (self.X_test.shape[0], self.n_lags, len(self.columns_list)))
+        print(self.X_train[0])
+        print(self.X_train[1])
+        
 
 
     def prepare_data_feat_step(self, training_data_percent:float = 0.2, n_lags:int=60, predict_days:int=0, target_column:str=None, extra_features=[], reshape_for_lstm:bool=False)->tuple:
