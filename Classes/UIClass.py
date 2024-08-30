@@ -247,17 +247,17 @@ class UI():
         # self.X_train, self.y_train, self.X_test, self.y_test, self.sc_extra = 
 
         self.fetch_data(self.selected_ticker, self.begin_date, self.end_date)
-        self.prepare_datasets(training_data_percent = 0.2, n_lags=5, predict_days=0, target_column='Open', extra_features=['Close'], reshape_for_lstm=True)
+        # self.prepare_datasets(training_data_percent = 0.2, n_lags=5, predict_days=0, target_column='Open', extra_features=['Close'], reshape_for_lstm=True)
 
-        self.y_pred=self.model.predict(self.X_train)
-        self.y_pred=self.sc.inverse_transform(self.y_pred)
+        # self.y_pred=self.model.predict(self.X_train)
+        # self.y_pred=self.sc.inverse_transform(self.y_pred)
     
-        #get the right scaller
-        self.sc=self.sc_extra['Open']
+        # #get the right scaller
+        # self.sc=self.sc_extra['Open']
     
-        self.y_test=self.y_test.iloc[:-1]
+        # self.y_test=self.y_test.iloc[:-1]
 
-        self.y_pred_df=pd.DataFrame({'LSTM test forecast':self.y_pred.reshape(-1),
-                               'Original data':self.y_test['Open'].values},
-                               index=self.y_test.index.values)
+        # self.y_pred_df=pd.DataFrame({'LSTM test forecast':self.y_pred.reshape(-1),
+        #                        'Original data':self.y_test['Open'].values},
+        #                        index=self.y_test.index.values)
     
