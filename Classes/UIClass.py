@@ -232,7 +232,7 @@ class UI():
         self.SelectedTicker.fetch_data()
     
     def prepare_datasets(self, training_data_percent:float = 0.2, n_lags:int=60, predict_days:int=0, target_column:str=None, extra_features=[], reshape_for_lstm:bool=False):
-        self.X_train, self.y_train, self.X_test, self.y_test, self.sc = self.SelectedTicker.prepare_data_feat_step(n_lags = 1, predict_days=predict_days, training_data_percent = training_data_percent, target_column=target_column, extra_features=extra_features, reshape_for_lstm=reshape_for_lstm) #.   'Close'
+        self.X_train, self.y_train, self.X_test, self.y_test, self.sc = self.SelectedTicker.prepare_data_feat_step(n_lags = n_lags, predict_days=predict_days, training_data_percent = training_data_percent, target_column=target_column, extra_features=extra_features, reshape_for_lstm=reshape_for_lstm) #.   'Close'
         # TODO
         
     def init_model(self):
@@ -241,19 +241,12 @@ class UI():
                 self.model = lstm_horizon_model(self.X_train, self.y_train)      
             case 'RNN':
                 self.model = rnn_model(self.X_train)      
-            # If an exact match is not confirmed, this last case will be used if provided
-            case _:
-                raise Exception(f'Sorry, but {Value} model not yet implemented.' )         
-
+            
     def predict(self):
         # self.X_train, self.y_train, self.X_test, self.y_test, self.sc_extra = 
-        
-        print(f'{self.selected_ticker=}')
-        print(f'{self.begin_date=}')
-        print(f'{self.end_date=}')
 
         self.fetch_data(self.selected_ticker, self.begin_date, self.end_date)
-        self.prepare_datasets(training_data_percent = 0.2, n_lags=60, predict_days=0, target_column='Open', extra_features=['Close'], reshape_for_lstm=True)
+        self.prepare_datasets(training_data_percent = 0.2, n_lags=5, predict_days=0, target_column='Open', extra_features=['Close'], reshape_for_lstm=True)
 
         self.y_pred=self.model.predict(self.X_train)
         self.y_pred=self.sc.inverse_transform(self.y_pred)
