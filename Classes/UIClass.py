@@ -75,14 +75,14 @@ class UI():
         if not isinstance(value, str):
             raise TypeError("selected_model must be a str")
         self._selected_model = value
-        match value:
-            case 'LSTM':
-                self.model = lstm_horizon_model(self.X_train, self.y_train)      
-            case 'RNN':
-                self.model = rnn_model(self.X_train)      
-            # If an exact match is not confirmed, this last case will be used if provided
-            case _:
-                raise Exception(f'Sorry, but {Value} model not yet implemented.' )
+        # match value:
+        #     case 'LSTM':
+        #         self.model = lstm_horizon_model(self.X_train, self.y_train)      
+        #     case 'RNN':
+        #         self.model = rnn_model(self.X_train)      
+        #     # If an exact match is not confirmed, this last case will be used if provided
+        #     case _:
+        #         raise Exception(f'Sorry, but {Value} model not yet implemented.' )
 # ---------
 
 # def setup_lstm(X_train, y_train):
@@ -232,13 +232,25 @@ class UI():
         self.SelectedTicker.fetch_data()
     
     def prepare_datasets(self, training_data_percent:float = 0.2, n_lags:int=60, predict_days:int=0, target_column:str=None, extra_features=[], reshape_for_lstm:bool=False):
-        self.X_train, self.y_train, self.X_test, self.y_test, self.sc = self.SelectedTicker.prepare_data_feat_step(n_lags = 1, training_data_percent = 0.3, target_column='Open',extra_features=['Close'], reshape_for_lstm=True) #.   'Close'
+        self.X_train, self.y_train, self.X_test, self.y_test, self.sc = self.SelectedTicker.prepare_data_feat_step(n_lags = 1, predict_days=5, training_data_percent = 0.3, target_column='Open',extra_features=['Close'], reshape_for_lstm=True) #.   'Close'
+        # TODO
         
-    # ////
-     
+    def init_model(self):
+        match self.selected_model:
+            case 'LSTM':
+                self.model = lstm_horizon_model(self.X_train, self.y_train)      
+            case 'RNN':
+                self.model = rnn_model(self.X_train)      
+            # If an exact match is not confirmed, this last case will be used if provided
+            case _:
+                raise Exception(f'Sorry, but {Value} model not yet implemented.' )         
+
     def predict(self):
-        self.X_train, self.y_train, self.X_test, self.y_test, self.sc_extra = self.fetch_data(self.selected_ticker, self.begin_date, self.end_date)
-        self.y_pred=self.selected_model.predict(self.X_train)
+        # self.X_train, self.y_train, self.X_test, self.y_test, self.sc_extra = 
+        self.fetch_data(self.selected_ticker, self.begin_date, self.end_date)
+        self.prepare_datasets(training_data_percent = 0.2, n_lags=60, predict_days=0, target_column=None, extra_features=[], reshape_for_lstm=True)
+
+        self.y_pred=self.model.predict(self.X_train)
         self.y_pred=self.sc.inverse_transform(self.y_pred)
     
         #get the right scaller

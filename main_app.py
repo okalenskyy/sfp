@@ -15,32 +15,6 @@ from st_on_hover_tabs import on_hover_tabs
 # -----------------------------------------------------------------------------
 # Declare some useful functions.
 
-# def predict(ticker, model, begin_date, end_date):
-#     # tickers_dataset = fetch_data(ticker, begin_date, end_date)
-#     X_train, y_train, X_test, y_test, sc_extra = fetch_data(ticker, begin_date, end_date)
-#     # model = select_model(model, tickers_dataset[0], tickers_dataset[1])
-    
-#     model = select_model(model, X_train, y_train)
-    
-
-#     # y_pred=model.predict(tickers_dataset[0])
-#     y_pred=model.predict(X_train)
-    
-#     #get the right scaller
-#     # sc=tickers_dataset[4]['Open']
-#     sc=sc_extra['Open']
-    
-
-#     # y_test=tickers_dataset[3].iloc[:-1]
-#     y_test=y_test.iloc[:-1]
-
-#     y_pred_df=pd.DataFrame({'LSTM test forecast':y_pred.reshape(-1),
-#                          'Original data':y_test['Open'].values},
-#                          index=y_test.index.values)
-#     return y_pred_df, y_test, sc
-
-# ----[ NEW ]-------
- 
 def ini_UI_adapter()->UI:
     #init UI object
     sfpUI:UI = UI('main')
@@ -70,7 +44,7 @@ def init_side_bar(adapter: UI):
 def update_data(adapter: UI):
  # run calculations ---- TODO
     # adapter.y_pred_df, adapter.y_test_df, sfpUI.sc = 
-    adapter.predict(adapter)
+    adapter.predict()
 
 def render_page(adapter: UI):
     # header-------
@@ -109,8 +83,8 @@ def render_page(adapter: UI):
 
 sfpUI:UI = ini_UI_adapter()
 init_page(sfpUI)
-update_data(sfpUI)
 init_side_bar(sfpUI)
+update_data(sfpUI)
 render_page(sfpUI)
 
 
