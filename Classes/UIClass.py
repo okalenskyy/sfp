@@ -251,15 +251,15 @@ class UI():
 
         self.init_model()
 
+        #get the right scaller
+        self.sc=self.sc_extra['Open']
+    
         self.y_pred=self.model.predict(self.X_train)
         self.y_pred=self.sc.inverse_transform(self.y_pred)
     
-        # #get the right scaller
-        # self.sc=self.sc_extra['Open']
-    
-        # self.y_test=self.y_test.iloc[:-1]
+        self.y_test=self.y_test.iloc[:-1]
 
-        # self.y_pred_df=pd.DataFrame({'LSTM test forecast':self.y_pred.reshape(-1),
-        #                        'Original data':self.y_test['Open'].values},
-        #                        index=self.y_test.index.values)
+        self.y_pred_df=pd.DataFrame({'LSTM test forecast':self.y_pred.reshape(-1),
+                               'Original data':self.y_test['Open'].values},
+                               index=self.y_test.index.values)
     
