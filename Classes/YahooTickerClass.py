@@ -477,9 +477,9 @@ class YahooTicker():
         self.columns_list = [self.target_column] + self.extra_features
 
         self._split_dataset()
-        # self._scale_features()
-        # self._create_data_structure()
-        # self._prepare_test_set()
+        self._scale_features()
+        self._create_data_structure()
+        self._prepare_test_set()
 
         if reshape_for_lstm:
             self._reshape_for_lstm()
