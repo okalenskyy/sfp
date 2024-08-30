@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from pathlib import Path
 import yfinance as yf
+import datetime
 
 # from lib.models import rnn_model, lstm_horizon_model
 # from Classes.YahooTickerClass import YahooTicker
@@ -32,8 +33,8 @@ def init_side_bar(adapter: UI):
     # sidebar------
     with st.sidebar:
         # 
-        st.date_input('Begin Date', value = "2023/01/01", format="YYYY/MM/DD")
-        st.date_input('End Date', value= "2023/12/31", format="YYYY/MM/DD")
+        st.date_input('Begin Date', datetime.date(2023, 1, 1))
+        st.date_input('End Date', datetime.date(2023, 12, 31))
         #
          
         adapter.begin_date = st.date_input('Begin Date')
