@@ -40,6 +40,7 @@ def init_side_bar(adapter: UI):
    
         adapter.selected_model = pills('Select Model', adapter.models,adapter.icons)
         adapter.pred_days = st.slider('Prediction days', 1, adapter.predict_days)
+        adapter.init_model()
 
 def update_data(adapter: UI):
  # run calculations ---- TODO
