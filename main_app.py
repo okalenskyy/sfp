@@ -31,6 +31,11 @@ def init_page(adapter: UI):
 def init_side_bar(adapter: UI):
     # sidebar------
     with st.sidebar:
+        # 
+        st.date_input('Begin Date') = '2023-01-01'
+        st.date_input('End Date') = '2023-12-31'
+        #
+         
         adapter.begin_date = st.date_input('Begin Date')
         adapter.end_date = st.date_input('End Date')
         
