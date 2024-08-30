@@ -247,6 +247,11 @@ class UI():
 
     def predict(self):
         # self.X_train, self.y_train, self.X_test, self.y_test, self.sc_extra = 
+        
+        print(f'{self.selected_ticker=}')
+        print(f'{self.begin_date=}')
+        print(f'{self.end_date=}')
+
         self.fetch_data(self.selected_ticker, self.begin_date, self.end_date)
         self.prepare_datasets(training_data_percent = 0.2, n_lags=60, predict_days=0, target_column='Open', extra_features=['Close'], reshape_for_lstm=True)
 
